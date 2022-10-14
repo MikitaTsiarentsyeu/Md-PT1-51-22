@@ -10,7 +10,7 @@ There will be cases when a task should be implemented in a several files, they s
 3. The score could be decreased according to the following list of sins:
   - **commiting directly in the main branch** will result in a **10 points penalty**;
   - **using any non-alphanumeric symbols except for the / or _ or - in a name of a branch** will result in a **10 points penalty**
-  - **naming a file/branch in russion** will result in a **30 points penalty**;
+  - **naming a file/branch in russian** will result in a **30 points penalty**;
   - **using a russian word in a file** will result in a **2 points penalty _for each usage_**;
   - **a missing part of a task** will result in a **20 (or more) points penalty** depending on the size of the part;
   - **a logical mistake** will result in a **15 points penalty**;
