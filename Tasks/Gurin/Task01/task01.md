@@ -18,9 +18,9 @@ depTerm = Decimal(input("Please input deposit term in years:\n"))
 monCap = input("Do you want to apply monthly capitalization? y/n\n")
 
 if monCap == "y":
-    amount = depSum*pow(1+depPer/100/12, (depTerm*12))
+    total = depSum*pow(1+depPer/100/12, (depTerm*12))
 else:
-    amount = depSum + depSum*depPer/100*depTerm
+    total = depSum + depSum*depPer/100*depTerm
 
-print("Totally you will get: ", Decimal(amount).quantize(Decimal("1.0000")))
+print("Totally you will get: ", Decimal(total).quantize(Decimal("1.0000")))
 ```
