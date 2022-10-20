@@ -2,9 +2,9 @@
 # Task 01
 ## Bank deposit calculation:
 For bank deposit calculation:
-1 - Ask User to input deposit amount, term in years and annual percentage. 
-2 - Ask User to enable or disable monthly capitalization.
-3 - Count and display the total. 
+1. Ask User to input deposit amount, term in years and annual percentage. 
+2. Ask User to enable or disable monthly capitalization.
+3. Count and display the total. 
 ## Solution:
 
 ```python
