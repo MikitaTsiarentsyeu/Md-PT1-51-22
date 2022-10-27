@@ -56,7 +56,7 @@ def check_time(hours, mins):
     elif mins < 30:
         ten, num = separate(mins)
 
-        str = f'{MINUTES[mins-1][0] if mins < 20 else f"{TENS[ten-2]} {MINUTES[num-1][0]}"} минут(а/ы) {HOURS[hours][1] if hours != 12 else HOURS[0][1]}'
+        str = f'{MINUTES[mins-1][0] if mins < 20 else f"{TENS[ten-2]}" if num == 0 else f"{TENS[ten-2]} {MINUTES[num-1][0]}"} минут(а/ы) {HOURS[hours][1] if hours != 12 else HOURS[0][1]}'
     elif mins == 30:
         str = f'половина {HOURS[hours][1] if hours != 12 else HOURS[0][1]}'
     elif 30 < mins < 45:
