@@ -52,8 +52,7 @@ def separate(mins):
 def check_time(hours, mins):
     
     if mins == 0:
-        str = f'{HOURS[hours-1][0]} часа ровно'
-    
+        str = f'{HOURS[hours-1][0]} час(а/ов) ровно'
     elif mins < 30:
         ten, num = separate(mins)
 
@@ -62,12 +61,10 @@ def check_time(hours, mins):
         str = f'половина {HOURS[hours][1] if hours != 12 else HOURS[0][1]}'
     elif 30 < mins < 45:
         ten, num = separate(mins)
-
-        str = f'{TENS[ten-2]} {MINUTES[num-1][0]} минут(а/ы) {HOURS[hours][1] if hours != 12 else HOURS[0][1]}'
+        
+        str = f'{TENS[ten-2] if num == 0 else f"{TENS[ten-2]} {MINUTES[num-1][0]}"} минут(а/ы) {HOURS[hours][1] if hours != 12 else HOURS[0][1]}'
     elif mins >= 45:
-        index = 60 - mins
-
-        str = f'без {MINUTES[index-1][1]} минут(а/ы) {HOURS[hours][1] if hours != 12 else HOURS[0][1]}'
+        str = f'без {MINUTES[60-mins-1][1]} минут(а/ы) {HOURS[hours][0] if hours != 12 else HOURS[0][0]} час(а/ов)'
 
     os.system('cls')
     print('Время: ' + str + '\n\n')
@@ -81,11 +78,9 @@ def main():
     )
 
     if menu_title == '1':
-        
-        time = dt.now()\
-                    .strftime("%I:%M")
-
-        hours, mins = time.split(':')
+        hours, mins = dt.now()\
+                    .strftime("%I:%M")\
+                        .split(':')
 
         check_time(int(hours), int(mins))
     elif menu_title == '2':
