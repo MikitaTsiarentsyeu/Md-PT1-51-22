@@ -1,7 +1,7 @@
 # Into Russian time  converter
 # It has no validation check for inputed time but can translate 24-h format into 12-h format.
 
-import datetime as dat
+from datetime import datetime as dat
 
 
 h_numb_dict = {1: ['час', 'первого'], 2: ['два', 'второго'], 3: ['три', 'третьего'], 4: ['четыре', 'четвёртого'],
@@ -28,7 +28,7 @@ inp_time = ''
 while inp_time != '1' and inp_time != '2':
     inp_time = input('Do you wish to:\n1. Use current time \n2. Enter your own?\n(enter 1 or 2)\n')
     if inp_time == '1':
-        time_in = f'{dat.datetime.now().hour}:{dat.datetime.now().minute}'
+        time_in = f'{dat.now().hour}:{dat.now().minute}'
     elif inp_time == '2':
         time_in = input('Enter your time in  hh:mm format please.\n')
     else:
@@ -36,9 +36,9 @@ while inp_time != '1' and inp_time != '2':
 
 time_list = time_in.split(':')
 hours = int(time_list[0])
-hours = hours if hours <= 12 else hours - 12
+hours = hours if hours <= 12 and hours != 0 else abs(hours - 12)
+next_hour = hours + 1 if hours < 12 else hours - 11
 minutes = int(time_list[1])
-check_minutes = minutes if minutes < 45 else 60 - minutes
 
 if hours == 1:                                  # get forms of hour word to final expressions
     h_word = ''
@@ -47,12 +47,7 @@ elif hours > 1 and hours < 5:
 else:
     h_word = hours_list[1]
 
-if str(check_minutes)[-1] == '1':               # get forms of minute word to final expressions
-    c_min_word = minutes_list[1]
-else:
-    c_min_word = minutes_list[2]
-
-if minutes > 10 and minutes < 20:
+if minutes > 10 and minutes < 20:               # get forms of minute word to final expressions
     min_word = minutes_list[2]
 elif str(minutes)[-1] == '1':
     min_word = minutes_list[0]
@@ -62,16 +57,16 @@ else:
     min_word = minutes_list[2]
 
 if minutes == 0:
-    answer = f'{h_numb_dict[hours][0] if hours != 0 else h_numb_dict[12][0]} {h_word} ровно'.capitalize()
-elif minutes > 0 and minutes < 5:
-    answer = f'{m_numb_dict[minutes][0]} {min_word} {h_numb_dict[hours + 1 if hours < 12 else hours - 11][1]}'.capitalize()
+    answer = f'{h_numb_dict[hours][0]} {h_word} ровно'.replace('  ', ' ').capitalize()
 elif minutes == 30:
-    answer = f'половина {h_numb_dict[hours + 1 if hours < 12 else hours - 11][1]}'.capitalize()
+    answer = f'половина {h_numb_dict[next_hour][1]}'.capitalize()
 elif minutes >= 45:
-    answer = f'без {m_numb_dict[60-minutes][1]} {c_min_word} {h_numb_dict[hours + 1 if hours < 12 else hours - 11][0]}'.capitalize()
+    answer = f'без {m_numb_dict[60 - minutes][1]} ' \
+             f'{minutes_list[1] if str(60 - minutes)[-1] == "1" else minutes_list[2]} ' \
+             f'{h_numb_dict[next_hour][0]}'.capitalize()
 else:
-    answer = f'{m_numb_dict[minutes][0]} {min_word} {h_numb_dict[hours + 1 if hours < 12 else hours - 11][1]}'.capitalize()
+    answer = f'{m_numb_dict[minutes][0]} {min_word} {h_numb_dict[next_hour][1]}'.capitalize()
 
 
 print(answer)
-input('Press anything to quit.\n')
+input('Press "Enter" to quit.\n')
