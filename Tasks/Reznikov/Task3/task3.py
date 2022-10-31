@@ -1,3 +1,5 @@
+import itertools
+
 """
 Пользователь вводит строку, содержащую числительные через пробел, все числа больше 0 и меньше 21, например, 
 “five thirteen two eleven seventeen two one thirteen ten four eight five nineteen”. 
@@ -9,7 +11,7 @@
 - вывести полную сумму всех нечётных чисел
 - использовать в программе только одну переменную (необязательная "задача со звёздочкой" поразвлекаться)
 """
-import itertools
+
 def get_dict():
     x = {
         'one':1,
@@ -36,13 +38,9 @@ def get_dict():
     }
     return x
 
-"""- вывести произведение первого и второго чисел, сумму второго и третьего, 
-произведение третьего и четвёртого и т. д. (для коллекции любой длины)
-"""
 def get_odd_sum(x):
     x = x.split(' ')
     x = [int(x) for x in x]
-    # print(x)
     x = sum(filter(lambda x: (x%2 != 0) , x))
     return x
     
@@ -68,7 +66,6 @@ def get_multiply(x):
                                                 [int(x[1]) for x in enumerate(get_array(str(x))) if int(x[0]) % 2 != 0], 
                                                 fillvalue=0)])
     )
-    return 1
 
 
 x = [x.replace(x, f'{get_dict()[x]}') for x in input('Enter number: ').split(' ') if x in get_dict()]
