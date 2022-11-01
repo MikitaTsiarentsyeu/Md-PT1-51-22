@@ -40,35 +40,36 @@ def time_counter(user_time = str):
     minutes_ru = int(user_time[1])
   
     hour_ru = hour_ru if 0 <= hour_ru <= 12 else abs(hour_ru - 12)
+    hour_counter = hour_ru + 1 if hour_ru < 12 else hour_ru - 11
 
     if minutes_ru == 0:
         if 1 < hour_ru < 5:
             user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_hours[hour_ru][0]} {list_hours[0]} ровно'
-        elif 4 < hour_ru < 12:
+        elif 4 < hour_ru <= 12:
             user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_hours[hour_ru][0]} {list_hours[1]} ровно'
-
+        
     elif minutes_ru < 30:
         if minutes_ru == 1 or minutes_ru == 21:
-            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[0]} {dict_hours[hour_ru+1][1]}'
+            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[0]} {dict_hours[hour_counter][1]}'
         elif 1 < minutes_ru < 5 or 21 < minutes_ru < 25:
-            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[1]} {dict_hours[hour_ru+1][1]}'
+            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[1]} {dict_hours[hour_counter][1]}'
         elif 4 < minutes_ru < 21 or 24 < minutes_ru <30:
-            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[2]} {dict_hours[hour_ru+1][1]}'
+            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[2]} {dict_hours[hour_counter][1]}'
 
     elif minutes_ru == 30:
-        user_time_ru = f'{hour_ru}:{minutes_ru} - половина {dict_hours[hour_ru+1][1]}'
+        user_time_ru = f'{hour_ru}:{minutes_ru} - половина {dict_hours[hour_counter][1]}'
 
     elif 30  < minutes_ru  < 45:
-        user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[2]} {dict_hours[hour_ru+1][1]}'
+        user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[2]} {dict_hours[hour_counter][1]}'
         if minutes_ru == 31 or minutes_ru == 41:
-            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[0]} {dict_hours[hour_ru+1][1]}'
+            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[0]} {dict_hours[hour_counter][1]}'
         elif 32 <= minutes_ru <= 34 or 42 <= minutes_ru <= 44:
-            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[1]} {dict_hours[hour_ru+1][1]}'         
+            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[1]} {dict_hours[hour_counter][1]}'         
         elif 35 <= minutes_ru <= 40:
-            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[2]} {dict_hours[hour_ru+1][1]}' 
+            user_time_ru = f'{hour_ru}:{minutes_ru} - {dict_minutes[minutes_ru][0]} {list_minutes[2]} {dict_hours[hour_counter][1]}' 
 
     elif minutes_ru >= 45:
-      user_time_ru = f'{hour_ru}:{minutes_ru} - без {dict_minutes[60-minutes_ru][1]} {list_minutes[2]} {dict_hours[hour_ru+1][1]}'
+      user_time_ru = f'{hour_ru}:{minutes_ru} - без {dict_minutes[60-minutes_ru][1]} {list_minutes[2]} {dict_hours[hour_counter][1]}'
 
     return user_time_ru
 
