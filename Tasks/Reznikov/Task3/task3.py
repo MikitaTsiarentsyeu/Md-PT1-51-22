@@ -39,33 +39,30 @@ def get_dict():
     return x
 
 def get_odd_sum(x):
-    x = x.split(' ')
-    x = [int(x) for x in x]
-    x = sum(filter(lambda x: (x%2 != 0) , x))
-    return x
+    return sum(filter(lambda x: (x%2 != 0) , get_array(x)))
     
 def get_array(x):
     x = x.split(' ')
     x = [int(x) for x in x]
     return x
 
-def get_multiply(x):
-    get_array(x)
-    
-    
-    print('Multiply elements: ' + str([x[0]*x[1] for x in itertools.zip_longest(
+def get_multiply_result(x):
+    return [x[0]*x[1] for x in itertools.zip_longest(
                                                 [int(x[1]) for x in enumerate(get_array(x)) if int(x[0]) % 2 == 0],
                                                 [int(x[1]) for x in enumerate(get_array(x)) if int(x[0]) % 2 != 0], 
-                                                fillvalue=0)])
-    )
+                                                fillvalue=0)]
+                                                
 
+def get_sum_result(x):
     x = str([int(x[1]) for x in enumerate(get_array(x)) if int(x[0]) != 0]).replace('[', '').replace(']', '').replace(',', '')
 
-    print('Sum elements: ' + str([x[0]+x[1] for x in itertools.zip_longest(
+    return [x[0]+x[1] for x in itertools.zip_longest(
                                                 [int(x[1]) for x in enumerate(get_array(str(x))) if int(x[0]) % 2 == 0],
                                                 [int(x[1]) for x in enumerate(get_array(str(x))) if int(x[0]) % 2 != 0], 
-                                                fillvalue=0)])
-    )
+                                                fillvalue=0)]
+
+def merge(x):
+    return [x for x in zip([x for x in get_multiply_result(x)], [x for x in get_sum_result(x)]) for x in x]
 
 
 x = [x.replace(x, f'{get_dict()[x]}') for x in input('Enter number: ').split(' ') if x in get_dict()]
@@ -73,4 +70,4 @@ x = list(set(x))
 x = ' '.join(sorted(x, key=int))
 print('New string: ' + x)
 print(f'Sum odd numbers: {get_odd_sum(x)}')
-get_multiply(x)
+print(f'Multiply and sum result: {merge(x)}')
