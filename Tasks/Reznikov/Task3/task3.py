@@ -33,8 +33,7 @@ def get_dict():
         'seventeen':17,
         'eighteen':18,
         'nineteen':19,
-        'twenty':20,
-        'twenty one':21
+        'twenty':20
     }
     return x
 
@@ -44,6 +43,11 @@ def get_odd_sum(x):
 def get_array(x):
     x = x.split(' ')
     x = [int(x) for x in x]
+    return x
+
+def get_sorted_array(x):
+    x = list(set(x))
+    x = ' '.join(sorted(x, key=int))
     return x
 
 def get_multiply_result(x):
@@ -65,9 +69,15 @@ def merge(x):
     return [x for x in zip([x for x in get_multiply_result(x)], [x for x in get_sum_result(x)]) for x in x]
 
 
-x = [x.replace(x, f'{get_dict()[x]}') for x in input('Enter number: ').split(' ') if x in get_dict()]
-x = list(set(x))
-x = ' '.join(sorted(x, key=int))
-print('New string: ' + x)
-print(f'Sum odd numbers: {get_odd_sum(x)}')
-print(f'Multiply and sum result: {merge(x)}')
+def main():
+    x = [x.replace(x, f'{get_dict()[x]}') for x in input('Please enter a string of numbers: ').strip().split(' ') if x in get_dict()]
+    if len(x) <= 1:
+        return print('Invalid input, please try again...'), main()
+    
+    x = get_sorted_array(x)
+    print(f'New string: {x}')
+    print(f'Sum odd numbers: {get_odd_sum(x)}')
+    print(f'Multiply and sum result: {merge(x)}')
+
+if __name__ == "__main__":
+    main()
