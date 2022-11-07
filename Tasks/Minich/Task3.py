@@ -10,22 +10,19 @@ lis2 = []
 lis3 = []
 lis4 = []
 sum=0
-
+k=0
 for i in lis:
     x = digitsdic[i]
     lis2.append(x)
+    k+=1
+    if k%2==0:
+        lis4.append(x*lis2[k-2])
+    elif k>2:
+        lis4.append(x+lis2[k-2])
     if x%2!=0:
         sum=sum+x
     if x not in lis3:
        lis3.append(x)
-k=0 
-for i in lis2:
-    k+=1
-    if k<=len(lis2):
-        if lis2.index(i)==0 or lis2.index(i)%2==0:
-            lis4.append(i*lis2[lis2.index(i)+1]) 
-        else:
-            lis4.append(i+lis2[lis2.index(i)+1])    
 
 print(*lis2,sep=' ')
 print(*lis3,sep = ' ')
