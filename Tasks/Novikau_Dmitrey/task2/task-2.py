@@ -23,9 +23,8 @@ dmin = {0:["ровно"], 1: ["одна минута"], 2: ["две минуты
 
 enter = input("what time are you interested now or your?\n Enter 'now time' or 'hh:mm'\n")
 
-hhmm = enter.split(':')
-hh = int()
-mm = int()
+
+
 
 
 if enter == ("now time"):
@@ -33,26 +32,30 @@ if enter == ("now time"):
       m = dmin[mnow]
       if m == dmin[0]:
             print(f"{h[0]} {m[0]}")
-      if m < dmin[30]:
+      elif m < dmin[30]:
             print(f"{m[0]} {h[1]}")
-      if m == dmin[30]:
+      elif m == dmin[30]:
             print(f"{m[0]} {h[1]}")
-      if m > dmin[30] and m < dmin[45]:
+      elif m > dmin[30] and m < dmin[45]:
             print(f"{m[0]} {h[1]}")
-      if m >= dmin[45]:
+      elif m >= dmin[45]:
             print(f"{m[0]} {h[1]}")
 else:
+      hhmm = enter.split(':')
+      hh = int(hhmm[0])
+      mm = int(hhmm[1])
       enter == (hhmm)
       hhy = dhou[hh]
       z = dmin[mm]
+
       if z == dmin[0]:
-            print(f"{hhy[0]} часа {z[0]}")
-      if z < dmin[30]:
+            print(f"{hhy[0]} {z[0]}")
+      elif z < dmin[30]:
             print(f"{z[0]} {hhy[1]}")
-      if z == dmin[30]:
+      elif z == dmin[30]:
             print(f"{z[0]} {hhy[1]}")
-      if z > dmin[30] and z < dmin[45]:
+      elif z > dmin[30] and z < dmin[45]:
             print(f"{z[0]} {hhy[1]}")
-      if z >= dmin[45]:
+      elif z >= dmin[45]:
             print(f"{z[0]} {hhy[1]}")
-      print("sorry")
+      else: print("sorry")
