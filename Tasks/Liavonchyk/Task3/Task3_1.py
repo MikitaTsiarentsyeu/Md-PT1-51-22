@@ -14,6 +14,7 @@ print(sum(list(set(dict_string.keys()).intersection({1,3,5,7,9,11,13,15,17,19}))
 dict_string = list(dict_string.keys())
 
 dict_string[0] = 1
+# as we added 0 element and we shouldn't take it into account so we use 1:len range of list
 while dict_string[0] < len(dict_string) - 1:
     print(dict_string[dict_string[0]] * dict_string[dict_string[0] + 1] if dict_string[0] % 2 == 1 else dict_string[dict_string[0]] + dict_string[dict_string[0] + 1], end = ' ')
     dict_string[0] = dict_string[0] + 1
