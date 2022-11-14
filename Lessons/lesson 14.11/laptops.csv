@@ -1,0 +1,8 @@
+make,model,cpu,gpu
+hp,victus,intel core i5,rtx1050
+dell,g15,amd radeon 7,rtx3070
+lenovo,g15,amd radeon 7,rtx3070
+acer,predator,i7,rtx3080
+acer,helios,i5,rtx3050
+acer,helios,i5,rtx3050
+acer,helios,i5,rtx3050
