@@ -4,10 +4,10 @@ def read_file(file):
 
 def write_file(file, text):
     with open(file, 'w', encoding='utf-8') as f:
-        for i in text:
-            f.write(i)
-    
+        f.writelines(text)
+        
     return print(f'Edited text successfully written to file: {file}')
+    
 
 def edit_text(text, user_size):
     result_text = []
@@ -54,4 +54,4 @@ if __name__ == '__main__':
 
     result_text = edit_text(read_file('text.txt'), user_size)
     if result_text:
-        write_file('new_text.txt', result_text)
+        write_file(f'edited_{user_size}_text.txt', result_text)
