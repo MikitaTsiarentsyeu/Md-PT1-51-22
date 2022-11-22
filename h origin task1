@@ -1,0 +1,33 @@
+[33me3a33f9[m[33m ([m[1;36mHEAD -> [m[1;32mGurin/Task02[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Gurin/Task02[m[33m)[m HEAD@{0}: checkout: moving from Gurin/Task02 to Gurin/Task02
+[33me3a33f9[m[33m ([m[1;36mHEAD -> [m[1;32mGurin/Task02[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/Gurin/Task02[m[33m)[m HEAD@{1}: pull --tags origin main: Merge made by the 'ort' strategy.
+[33mc06391b[m HEAD@{2}: commit: Gurin/Task02
+[33m7bad8c5[m[33m ([m[1;31morigin/Gurin/Task01[m[33m, [m[1;32mGurin/Task01[m[33m)[m HEAD@{3}: checkout: moving from main to Gurin/Task02
+[33mb01926e[m[33m ([m[1;32mmain[m[33m)[m HEAD@{4}: checkout: moving from Gurin/Task02 to main
+[33m7bad8c5[m[33m ([m[1;31morigin/Gurin/Task01[m[33m, [m[1;32mGurin/Task01[m[33m)[m HEAD@{5}: checkout: moving from Gurin/Task01 to Gurin/Task02
+[33m7bad8c5[m[33m ([m[1;31morigin/Gurin/Task01[m[33m, [m[1;32mGurin/Task01[m[33m)[m HEAD@{6}: checkout: moving from main to Gurin/Task01
+[33mb01926e[m[33m ([m[1;32mmain[m[33m)[m HEAD@{7}: pull --tags origin main: Fast-forward
+[33m3071935[m HEAD@{8}: checkout: moving from main to main
+[33m3071935[m HEAD@{9}: checkout: moving from Gurin/Task02 to main
+[33m7bad8c5[m[33m ([m[1;31morigin/Gurin/Task01[m[33m, [m[1;32mGurin/Task01[m[33m)[m HEAD@{10}: checkout: moving from Gurin/Task01 to Gurin/Task02
+[33m7bad8c5[m[33m ([m[1;31morigin/Gurin/Task01[m[33m, [m[1;32mGurin/Task01[m[33m)[m HEAD@{11}: checkout: moving from main to Gurin/Task01
+[33m3071935[m HEAD@{12}: checkout: moving from main to main
+[33m3071935[m HEAD@{13}: pull --tags origin main: Fast-forward
+[33m00adcaa[m HEAD@{14}: checkout: moving from Gurin/Task01 to main
+[33m7bad8c5[m[33m ([m[1;31morigin/Gurin/Task01[m[33m, [m[1;32mGurin/Task01[m[33m)[m HEAD@{15}: commit: fix: list in task01.md
+[33m8150784[m HEAD@{16}: commit: fix: task01.md
+[33m9dc8864[m HEAD@{17}: commit: add task01
+[33m00adcaa[m HEAD@{18}: checkout: moving from main to Gurin/Task01
+[33m00adcaa[m HEAD@{19}: checkout: moving from Gurin/Task0 to main
+[33m544c7e0[m[33m ([m[1;32mGurin/Task0[m[33m)[m HEAD@{20}: checkout: moving from main to Gurin/Task0
+[33m00adcaa[m HEAD@{21}: checkout: moving from Gurin/Task01 to main
+[33m544c7e0[m[33m ([m[1;32mGurin/Task0[m[33m)[m HEAD@{22}: checkout: moving from main to Gurin/Task01
+[33m00adcaa[m HEAD@{23}: pull --tags origin main: Fast-forward
+[33mb0b7f73[m HEAD@{24}: checkout: moving from Gurin/Task0 to main
+[33m544c7e0[m[33m ([m[1;32mGurin/Task0[m[33m)[m HEAD@{25}: checkout: moving from Gurin/Task01 to Gurin/Task0
+[33m544c7e0[m[33m ([m[1;32mGurin/Task0[m[33m)[m HEAD@{26}: checkout: moving from Gurin/Task0 to Gurin/Task01
+[33m544c7e0[m[33m ([m[1;32mGurin/Task0[m[33m)[m HEAD@{27}: commit: rename Task00 folder
+[33m6ef45ab[m[33m ([m[1;31morigin/Gurin/Task0[m[33m)[m HEAD@{28}: commit: Task0
+[33mb0b7f73[m HEAD@{29}: checkout: moving from main to Gurin/Task0
+[33mb0b7f73[m HEAD@{30}: checkout: moving from Gurin/Task0 to main
+[33mb0b7f73[m HEAD@{31}: checkout: moving from main to Gurin/Task0
+[33mb0b7f73[m HEAD@{32}: clone: from github.com:MikitaTsiarentsyeu/Md-PT1-51-22.git
