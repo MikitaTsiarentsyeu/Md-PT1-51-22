@@ -1,0 +1,231 @@
+The February
+TIOBE Index 
+of the most 
+popular prog
+ramming lang
+uages is out
+, and while 
+the work goi
+ng on in the
+background o
+f TIOBE’s 
+calculations
+has changed,
+not much has
+shifted in t
+he way of ra
+nkings. Pyth
+on continues
+to sit atop 
+the index, w
+ith C and Ja
+va directly 
+behind it. I
+n Feb. 2021,
+those three 
+also occupie
+d the top sp
+ot, but with
+Python in th
+e number thr
+ee position,
+C at top, an
+d Java in se
+cond place. 
+Beyond the t
+op three, th
+ere hasn’t
+been much mo
+vement in th
+e index, wit
+h positions 
+four through
+eight unchan
+ged from the
+same time la
+st year. Tho
+se slots are
+occupied, re
+spectively, 
+by C++, C#, 
+Visual Basic
+, JavaScript
+and PHP. Pos
+itions nine 
+and 10 swapp
+ed from Feb.
+21 to now, w
+ith Assembly
+Language and
+SQL now occu
+pying each o
+ther’s pos
+itions. The 
+one big move
+of note betw
+een Feb. 202
+1 and Feb. 2
+022 was with
+the Groovy p
+rogramming l
+anguage, an 
+object-orien
+ted language
+for Java. Ov
+er the cours
+e of the yea
+r, Groovy fe
+ll from 12th
+position all
+the way to 2
+0th, putting
+it perilousl
+y close to t
+he “other 
+programming 
+languages”
+list. TIOBE 
+CEO Paul Jan
+sen attribut
+es Groovy’
+s decline to
+the growth i
+n the CI/CD 
+space. Groov
+y was the on
+ly language 
+used for wri
+ting scripts
+on Jenkins, 
+which Jansen
+describes as
+having been 
+“the only 
+real player 
+in the CI/CD
+domain” ea
+rly on. Now,
+with platfor
+ms that don�
+��t require 
+Groovy, like
+GitHub, Azur
+e DevOps and
+GitLab, Groo
+vy is losing
+its place at
+the table. �
+��Groovy cou
+ld have grow
+n further be
+cause it was
+the major sc
+ript-based a
+lternative f
+or Java runn
+ing on the s
+ame JVM. How
+ever, Kotlin
+is taking ov
+er that posi
+tion right n
+ow, so I thi
+nk Groovy wi
+ll have a ha
+rd time,” 
+Jensen said.
+The TIOBE in
+dex may not 
+be full of s
+urprises thi
+s month, but
+Jansen did h
+ave a lot to
+say about th
+e index itse
+lf this mont
+h, as this i
+s the first 
+time it has 
+been compile
+d using Simi
+larweb’s t
+raffic analy
+sis platform
+instead of A
+lexa. “We 
+have used Si
+milarweb for
+the first ti
+me this mont
+h to select 
+search engin
+es and fortu
+nately, ther
+e are no big
+changes in t
+he index due
+to this swap
+. The only s
+triking diff
+erence is th
+at the top 3
+languages, P
+ython, C, an
+d Java, all 
+gained more 
+than 1 perce
+nt in the ra
+nkings,” J
+ansen said. 
+TIOBE decide
+d to make th
+e switch thi
+s month afte
+r Amazon’s
+announcement
+in December 
+2021 that it
+was shutting
+the Alexa we
+b ranking se
+rvice down, 
+effective Ma
+y 1, 2022, e
+nding 25 yea
+rs of the pr
+ogram. Janse
+n noted that
+not every we
+bsite has be
+en onboarded
+, but that t
+he switch to
+Similarweb i
+ncluded a sw
+itch to usin
+g HtmlUnit, 
+a non-GUI we
+b browser wi
+th APIs that
+let Java app
+s invoke pag
+es, fill for
+ms and do ot
+her standard
+web browsing
+activity. Th
+is switch wi
+ll eventuall
+y allow TIOB
+E to include
+websites it 
+was unable t
+o crawl befo
+re, like Sta
+ckoverflfow 
+and Github, 
+which could 
+have a large
+r impact on 
+scores
