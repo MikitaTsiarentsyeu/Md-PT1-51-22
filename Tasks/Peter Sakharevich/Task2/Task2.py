@@ -83,7 +83,7 @@ minutes = {101:"одна минута",
 157:"без трех минут",
 158:"без двух минут",
 159:"без одной минуты",}
-choise = input("Что бы Вы хотели узнать?\n1.Текущее время?\n2.Указанное время?\n")
+choise = input("What would you like to know?\n1.Current time\n2.Specified time\n")
 if choise == "1":
      time = str(datetime.now())
      present_time = time[11:16]
@@ -96,9 +96,9 @@ if choise == "1":
      elif 45 <= needed_minutes < 60: 
           print(f"Сейчас {minutes[needed_minutes + 100]} {hours[needed_hours + 1 + 100][0]}")
 elif choise == "2":
-     desired_time = input("Введите время в формате hh:mm\n")
+     desired_time = input("Enter time in hh:mm format\n")
      if desired_time[2] != ":" or int(desired_time[0:2]) > 23:
-          print("Неправильный формат времени")
+          print("Wrong time format")
      else:
           needed_hours = int(desired_time[0:2])
           needed_minutes = int(desired_time[3:])
@@ -108,5 +108,5 @@ elif choise == "2":
                print(f"Указанное время {minutes[needed_minutes + 100]} {hours[needed_hours + 1 + 100][1]}")
           elif 45 <= needed_minutes < 60: 
                print(f"Указанное время {minutes[needed_minutes + 100]} {hours[needed_hours + 1 + 100][0]}")
-          else: print("Неправильно указано время")
-else: print("Неправильно указан выбор")
+          else: print("Time is incorrect")
+else: print("Invalid selection")
