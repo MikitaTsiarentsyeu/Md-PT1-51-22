@@ -1,14 +1,11 @@
 # 1. Написать рекурсивную функцию для вычисления суммы всех элементов вложенных (любая глубина) списков.
 # Пример списка (синтаксис Python): [1, 2, [2, 4, [[7, 8], 4, 6]]], сумма элементов - 34
-result_sum = 0
+# result_sum = 0
 
 def count_values(list):
-    global result_sum
+    result_sum = 0
     for i in list:
-        if type(i) == int:
-            result_sum += i
-        else:
-            count_values(i)
+        result_sum += i if type(i) == int else count_values(i)
     return result_sum
 
 print("Subtask 1:\n", count_values([1, 2, [2, 4, [[7, 8], 4, 6]]]))
