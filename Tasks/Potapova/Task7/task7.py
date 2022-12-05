@@ -3,7 +3,7 @@ def reverse(text: str) -> str:
     if len(text) <= 1:
         return text
     else:
-        return text[-1] + reverse(text[:-1])
+        return f'{text[-1]}{reverse(text[:-1])}'
 
 
 print(reverse('hello'))
@@ -11,6 +11,9 @@ print(reverse('hello'))
 
 # TASK_2 sort merge
 def merge_list(left_list: list, right_list: list) -> list:
+    """ step2 for sort_list function.
+        Gets sorted pairs,
+        returns merged sorted list (asc)."""
     index_left = 0
     index_right = 0
     l = []
@@ -32,6 +35,10 @@ def merge_list(left_list: list, right_list: list) -> list:
 
 
 def sort_list(l: list):
+    """ sort merge realization.
+        Gets unsorted list,
+        Splits it to sorted pairs,
+        returns sorted list(asc)."""
     if len(l) <= 2:
         return l
     else:
