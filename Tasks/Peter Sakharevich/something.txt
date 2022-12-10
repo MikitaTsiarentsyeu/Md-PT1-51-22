@@ -1,0 +1,14 @@
+line_numbers = input('Enter line of numbers between one and twenty: \n')
+line = line_numbers.split(" ")
+#print(for i in list(numbers[line]))
+line_set = list(set(line))
+line_sorted = line.sort()
+for i in range (0, len(line)):
+    print(numbers[line[i]], end=' ')
+print(" ")
+for i in range (0, len(line_set)):
+    print(numbers[line_set[i]], end=' ')
+print()
+n=sorted(set(numbers[i] for i in line_numbers.split()))
+print(n)
+print()
