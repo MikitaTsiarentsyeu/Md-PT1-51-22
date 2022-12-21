@@ -61,7 +61,7 @@ def search_numbers_pattern(name: str) -> list:
                         contact_dict = json.load(f)
                         if contact_dict:
                             book.append(file_path)
-                except:
+                except Exception:
                     pass
     return book
 
@@ -85,7 +85,7 @@ def show_contact_dict(path_list: list) -> list:
                 if contact_dict:
                     contact_info.append(contact_dict)
 
-        except:
+        except Exception:
             pass
     return contact_info
 
