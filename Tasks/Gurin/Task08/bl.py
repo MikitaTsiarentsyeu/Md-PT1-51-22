@@ -13,3 +13,7 @@ def add(name, description):
 def search(name): 
     res = data.search(name)
     return res
+
+
+if __name__ == "__main__":
+    print("Please start with camera.py")

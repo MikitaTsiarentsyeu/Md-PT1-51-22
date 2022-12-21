@@ -8,7 +8,7 @@ def read():
     
 
 def add(): 
-    name = input("Please provide a name:\n")
+    name = validate_name()
     description = input("Please provide a description:\n")
     res = bl.add(name, description)
     if res:
@@ -18,7 +18,7 @@ def add():
 
 
 def search(): 
-    name = input("Please provide a name:\n")
+    name = validate_name("query")
     res = bl.search(name)
     if res:
         print("The camera was found: ", res)
@@ -27,8 +27,7 @@ def search():
 
 def show_menu():
     while True:
-        print("\nPlease choose option:\n")
-        print("1. Read a camera")
+        print("1. List of all cameras")
         print("2. Add a camera")
         print("3. Search for a camera")
         print("4. Exit")
@@ -45,4 +44,20 @@ def show_menu():
             print("Please make your choose")  
             continue  
 
-show_menu()
+def validate_name(ask="name"):
+    while True:
+        name = input(f"Please provide a {ask}:\n")
+        try:
+            if not name.replace(' ','').isalnum():
+                raise RuntimeError("Please use only alpha-numeric symbols")
+            if len(name) > 20:
+                raise RuntimeError("Please restrict the length of the name to a 20 symbols")
+        except RuntimeError as e:
+            print(e)
+        else:
+            break
+    return name
+
+if __name__ == "__main__":
+    show_menu()
+    # print("Please start with camera.py")

@@ -32,3 +32,6 @@ def search(name):
             else:
                 continue
         return    
+
+if __name__ == "__main__":
+    print("Please start with camera.py")
