@@ -44,6 +44,6 @@ def add_equipment(day_type, name, description, approaches_list):
     res = data.save_equipment(day_type, name, description, approaches_dict)
     return "Gym equipment was added" if res else "Something went wrong"
 
-# print(add_equipment(3, "test", "Short descr", [['12', '55'], ['35', '7']]))
-# ['Short descr', {0: ['12', '55'], 1: ['35', '7']}]
 
+if __name__ == "__main__":
+    print("Please use gym_run.py to start the app")

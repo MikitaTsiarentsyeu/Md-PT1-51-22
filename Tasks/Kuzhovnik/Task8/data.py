@@ -58,6 +58,5 @@ def save_equipment(day_type, name, description, approaches_list):
         return True
 
 
-# save_equipment(1, "Fly", "descr", {0: ['15', '35'], 1: ['15', '35'], 2: ['15', '35']})
-# print(search_equipment("f"))
-# print(show_equipments(1))
+if __name__ == "__main__":
+    print("Please use gym_run.py to start the app")

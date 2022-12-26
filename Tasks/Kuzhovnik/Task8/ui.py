@@ -2,8 +2,17 @@ import bl
 
 
 def show_equipments():
-    print("1. Chest day\n2. Hands day\n3. Legs day")
-    day_type = input("Choose day to show gym equipments: ")
+    while True:
+        try:
+            print("1. Chest day\n2. Hands day\n3. Legs day")
+            day_type = input("Choose day to show gym equipments: ")
+            if len(day_type) != 1 or day_type not in "123":
+                raise ValueError("Incorrect value. Enter numbers: 1, 2 or 3.")
+            break
+        except ValueError as ve:
+            print(ve)
+            continue
+
     print(bl.show_equipments(int(day_type)))
 
 
@@ -115,4 +124,11 @@ def show_menu():
             continue
 
 
-show_menu()
+if __name__ == "__main__":
+    print("Please use gym_run.py to start the app")
+else:
+    show_menu()
+
+
+
+
