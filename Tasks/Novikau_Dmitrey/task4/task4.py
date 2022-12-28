@@ -24,3 +24,6 @@ with open("/Lessons IT/Md-PT1-51-22/Tasks/Novikau_Dmitrey/task4/text.txt", 'r') 
         outStr+=add[i]
         i += 1
 print(outStr)
+with open("/Lessons IT/Md-PT1-51-22/Tasks/Novikau_Dmitrey/task4/file.txt", "w") as file:
+    file.write(outStr)
+    print("The file is saved in the working directory.")
