@@ -9,7 +9,6 @@ def add_user():
     res = bl.add(name,surname, date_of_birth)
     if res:
         print("New user is added")
-        print(res)
     else:
         print("Something went wrong")
     
