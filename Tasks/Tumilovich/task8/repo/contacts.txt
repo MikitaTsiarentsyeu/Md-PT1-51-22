@@ -1,0 +1,12 @@
+Rookie--Andrew--801291802343--London--England
+Sullivan--Steve--803299123--Paris--France
+Gilbert--Boris--990234536--Minsk--Belarus
+Gurich--Alexander--+37213123--Minsk--Belarus
+Rookie--Rick--124235345--Washington--Usa
+Erltwer--Tony--+78239592335--Berlin--Germany
+Borg--Jason--+375298847261----Kiev--Ukraine
+Paul--Jones--82748382--Washington--Usa
+Johnson--Stan--+26755543--Rome--Italy
+Novar--Arnold--92835043045--Bangkok--Thailand
+
+

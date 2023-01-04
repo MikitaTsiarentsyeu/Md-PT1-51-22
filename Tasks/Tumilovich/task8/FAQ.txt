@@ -1,0 +1,6 @@
+This app is a phone book. 
+What options you have here:
+1. READ - you can input last name of a given person and see if it in the phonebook. Additional you can get his name and phone number
+2. ADD - gives a possibility to include information of a new contact in a database.
+3. SEARCH - flexible search on any given information or even piece of information and give the result from every mention on the phonebook.
+
