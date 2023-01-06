@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'app/css/app-style.css' %}" type="text/css" />
+    </head>
+    <body>
+        <div id="header">
+            <h1>Blogs!!!</h1>
+            <div id="buttons">
+                <a href="#">create post</a>
+            </div>
+        </div>
+        <div id="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div id="footer">
+            <p>Powered by Django</p>
+        </div>
+    </body>
+</html>
