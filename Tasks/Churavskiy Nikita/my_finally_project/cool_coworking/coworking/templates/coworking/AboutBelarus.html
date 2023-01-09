@@ -1,0 +1,11 @@
+{% extends 'coworking/base.html' %} {% load static %} 
+{% block title %} Belarus {% endblock %}
+{% block content %}
+<h1 style="text-align:left; margin-bottom:2%"> Беларусь на карте </h1>
+<img style="width:60%; margin-right:40%" src="{% static 'coworking/img/000578_5805.jpg' %}">
+{% for i in result %}
+{% if i.title == 'Беларусь' %}
+<div><h5 style="text-align:justify; margin-top:2%">{{ i.content|linebreaksbr }}</h5></div>
+{% endif %}
+{% endfor %}
+{% endblock %}
