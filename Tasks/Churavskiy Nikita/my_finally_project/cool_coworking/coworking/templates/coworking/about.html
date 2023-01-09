@@ -1,0 +1,36 @@
+{% extends 'coworking/base.html' %} {% load static %} {% block title %} About
+Главная страница {%endblock %} {% block content %}
+<h3 style="text-align: justify; margin-top: 2%">
+  Данный сайт представляет собой независимый источник информации о таком понятии
+  как Coworking в англоязычной среде и развитии данной отрасли на территории РБ.
+  На нашем сайте вы можете изучить информаицю о Коворкинге, истории его
+  развития, взаимодейтсвия с community. Также увидеть красивые места Беларуси с
+  указанием расположения базовых точек и маршрутизации. После регистрации и
+  прохождения верификации, у Вас появится возможность добавить статью про свой
+  собственный Коворкинг на территории РБ с целью его дальнейшего развития и
+  популяризации.
+</h3>
+{% for i in result %}
+<div class="features"></div>
+{% endfor %}
+<div class="container">
+  <img src="{% static 'coworking/img/1.webp' %}" />
+  <img src="{% static 'coworking/img/2.webp' %}" />
+  <img src="{% static 'coworking/img/3.webp' %}" />
+</div>
+<div class="container">
+  <img src="{% static 'coworking/img/4.webp' %}" />
+  <img src="{% static 'coworking/img/5.webp' %}" />
+  <img src="{% static 'coworking/img/6.webp' %}" />
+</div>
+<div class="container">
+  <img src="{% static 'coworking/img/7.webp' %}" />
+  <img src="{% static 'coworking/img/8.webp' %}" />
+  <img src="{% static 'coworking/img/9.webp' %}" />
+</div>
+<div class="container">
+  <img src="{% static 'coworking/img/13.webp' %}" />
+  <img src="{% static 'coworking/img/11.webp' %}" />
+  <img src="{% static 'coworking/img/12.webp' %}" />
+</div>
+{% endblock %}

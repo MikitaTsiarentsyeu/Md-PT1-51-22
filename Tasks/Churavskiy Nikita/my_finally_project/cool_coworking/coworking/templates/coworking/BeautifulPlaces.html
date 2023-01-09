@@ -1,0 +1,12 @@
+{% extends 'coworking/base.html' %} {% load static %} {% block title %}
+BeautifulPlaces {%endblock%} {% block content %} {% for i in result %}
+<div class="Belarus">
+  {% if i.title != 'Беларусь' %} {% if i.title != 'Известные люди Беларуси' %}
+  {% if i.title != 'Национальная кухня' %}
+  <h2>{{ i.title }}</h2>
+  <h4 style="text-align: justify">{{ i.content|linebreaksbr }}</h4>
+  <p>
+    <img style="width: 80%" src="{{ i.photo.url }}" />
+  </p>
+</div>
+{% endif %} {% endif %} {% endif %} {% endfor %} {% endblock %}

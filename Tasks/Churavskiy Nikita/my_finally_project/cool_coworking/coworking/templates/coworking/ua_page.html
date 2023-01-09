@@ -1,0 +1,23 @@
+{% extends 'coworking/base.html' %} {% block title %} UA page{% endblock %}
+{% block content %}
+<div class="uapage">
+  {% for i in city %}
+  <h2>{{ i }}:</h2>
+  {% for i2 in result %} {% if i.id == i2.cat_id %}
+  <ul>
+    <h3>
+      <li>{{ i2.title }}:</li>
+      <li>{{ i2.street }} </li>
+      <li >{{ i2.num }}</li>
+      <li>{{ i2.content }}</li>
+      {% comment %} {% if request.user.is_authenticated %}
+        <h6 style="text-align:Left"> Пользователь: {{ user.email }} </h6>
+      {% else %} {% endcomment %}
+      <h6 style="text-align:Left"> Пользователь: {{ i2.email }} </h6>
+      {% comment %} {% endif %} {% endcomment %}
+      <h6>дата публикации : {{ i2.time_update }}</h6>
+    </h3>
+  </ul>
+  {% endif %} {% endfor %} {% endfor %}
+</div>
+{% endblock %}
