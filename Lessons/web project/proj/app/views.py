@@ -3,6 +3,8 @@ from django.http import HttpResponse, HttpResponseNotFound
 from .models import Post, Author
 from .forms import AddPost, AddModelPost
 import datetime
+from django.contrib.auth.decorators import permission_required
+
 
 
 def home(request):
@@ -10,16 +12,23 @@ def home(request):
 
 def posts(request):
     all_posts = Post.objects.all()
-
-    return render(request, 'posts.html', {'posts': all_posts, 'logo': "test"})
+    viewed_posts = request.session.get("viewed_posts", {})
+    return render(request, 'posts.html', {'posts': all_posts, "viewed_posts":viewed_posts, 'logo': "test"})
 
 def post(request, post_id):
     try:
         post = Post.objects.get(id=post_id)
+        viewed_posts = request.session.get("viewed_posts", {})
+        if post_id not in viewed_posts:
+            viewed_posts[post.id] = 1
+        else:
+            viewed_posts[post.id] += 1
+        request.session["viewed_posts"] = viewed_posts
         return render(request, 'post.html', {'post':post})
     except: 
         return HttpResponseNotFound()
 
+@permission_required("app.add_post")
 def add_post(request):
     
     if request.method == "POST":
@@ -32,7 +41,7 @@ def add_post(request):
             post_entry.post_type = form.cleaned_data['post_type']
             post_entry.image = form.cleaned_data['image']
             post_entry.isuued = datetime.datetime.now()
-            post_entry.author = Author.objects.all()[0] #stub, will be replaced with actual logic
+            post_entry.author = Author.objects.get(email=request.user.email)
 
             post_entry.save()
 
