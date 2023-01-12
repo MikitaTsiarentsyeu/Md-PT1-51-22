@@ -6,6 +6,9 @@
             <li>
                 <a href="{% url 'post' post.id %}">
                     {{ post.title|capfirst }}
+                    {% if post.id in viewed_posts %}
+                        | viewed {{viewed_posts[post.id]}}
+                    {% endif %}
                 </a>
             </li>
         {% endfor %}
