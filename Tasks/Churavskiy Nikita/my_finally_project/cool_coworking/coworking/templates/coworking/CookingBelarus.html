@@ -1,0 +1,11 @@
+{% extends 'coworking/base.html' %} {% load static %} {% block title %}
+CookingBelarus {%endblock%} {% block content %} {% for i in result %}
+<div class="Belarus">
+  {% if i.title == 'Национальная кухня' %}
+  <h2>{{ i.title }}</h2>
+  <p>
+    <img style="width: 80%; margin-right:20%" src="{{ i.photo.url }}" />
+  </p>
+  <h4 style="text-align: justify">{{ i.content|linebreaksbr }}</h4>
+</div>
+{% endif %} {% endfor %} {% endblock %}

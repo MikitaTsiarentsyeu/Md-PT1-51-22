@@ -1,0 +1,25 @@
+{% extends 'coworking/base.html' %} {% load static %} {% block title %} Login
+{% endblock %} {% block content %}
+
+<div class="formms" style="margin-bottom: 28%; margin-top:4%">
+  <div class="mainforms">
+    <div class="forms">
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-error">{{ form.non_field_errors }}</div>
+        {% for f in form %}
+
+        <label> <h3>{{f.label}}</h3> </label><br />
+        <h3>{{f}}</h3>
+
+        <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+
+        <div class="addbutton">
+          <button type="submit"><h3>Войти</h3></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
