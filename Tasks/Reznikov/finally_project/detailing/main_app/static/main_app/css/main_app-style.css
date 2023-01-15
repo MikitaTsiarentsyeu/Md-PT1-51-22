@@ -893,6 +893,10 @@ html, body{
         display:block!important;
         height: 175px;
     }
+    .success-content{
+        width:100%;
+        padding: 10% 5%;
+    }
 }
 @media(max-width:620px){
     .popup {
@@ -918,5 +922,8 @@ html, body{
         font-style: normal!important;
         font-weight: 600!important;
         line-height: 55px!important;
+    }
+    .success-content{
+        width: 100%;
     }
 }
