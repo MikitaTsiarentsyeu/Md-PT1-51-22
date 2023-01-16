@@ -1,0 +1,12 @@
+#header {
+    background-color: rgb(43, 226, 95);
+    display:flex;
+    justify-content: space-between;
+    height:100px
+}
+
+#footer {
+    background-color: rgb(246, 126, 71);
+    display:flex;
+    justify-content: center;
+}

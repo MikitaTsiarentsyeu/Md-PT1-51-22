@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'app/css/app-stylemy.css' %}" type="text/css" />
+    </head>
+    <body>
+        <div id="header">
+            <h1>Blog</h1>
+            <div id="buttons">
+                {% if user.is_authenticated %}
+                    <p>{{ user.get_username }}</p>
+                    <a href="{% url 'logout' %}?next={{request.path}}">Log out</a>
+                {% else %}
+                    <a href="{% url 'login' %}?next={{request.path}}">Log in</a>
+                {% endif %}
+                {% if perms.app.add_post %}
+                    <a href="{% url 'add' %}">create post</a>
+                {% endif %}
+            </div>
+        </div>
+        <div id="main">
+            <h1>Fire safety in your home</h1>
+
+                <p>
+                 Statistics show that about 80% of fires occur in residential buildings. Usually people themselves create fire hazardous situations. Therefore, the requirements of the fire regime dictate not only the conditions for maintaining private houses or safety rules in an apartment building, but also detailed rules for the behavior of people. Compliance with fire safety rules can reduce the number of fires and save many lives. Residential fires are usually caused by careless handling of open flames. To prevent an accident, you should remember the requirements of the fire regime when using open fire:
+                    it is forbidden to use open fire (torches, candles, kerosene lamps), as well as perform welding work in the basements of residential buildings;
+                    do not smoke in bed, as well as in sheds, pantries and other places where flammable materials are stored;
+                    do not throw away unextinguished matches and cigarette butts;
+                    do not leave candles near the window, curtains and bedspreads. 
+                </p>
+
+                <img src="{% static 'app/img/fire.jpg' %}" width=700 />
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div id="footer">
+            <p>Powered by PavelSTR</p>
+        </div>
+    </body>
+</html>
