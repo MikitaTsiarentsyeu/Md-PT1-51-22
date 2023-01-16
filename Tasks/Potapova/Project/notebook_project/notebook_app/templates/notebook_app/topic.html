@@ -1,0 +1,30 @@
+
+{% extends 'notebook_app/base.html' %}
+
+{% block page_header %}
+<div class="d-flex bd-highlight">
+<div class="p-2 flex-fill bd-highlight"><h1>{{topic}}</h1></div>
+<div class="align-self-center" >
+      <a href="{% url 'notebook_app:new_note' topic.id %}">Add new note</a>
+</div>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+
+  {% for note in notes %}
+    <div class="card mb-3" >
+        <h4 class="card-header" style="font-weight: 300">
+          <a href="{% url 'notebook_app:view_note' note.id topic.id %}">{{note.note_name}}</a>
+        </h4>
+
+      <div class="card-body">
+        <p style="text-align: right">{{note.date_added|date:'M d, Y H:i'}}</p>
+        <p>{{note.text|linebreaks|truncatechars:300}}</p>
+      </div>
+    </div>
+  {% empty %}
+    <p>There are no notes for this topic yet.</p>
+  {% endfor %}
+
+{% endblock content %}
