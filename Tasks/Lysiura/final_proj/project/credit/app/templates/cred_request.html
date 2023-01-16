@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block second_part %}
+{% endblock %}
+    
+{% block content %}
+
+
+
+<h1 style = 'color:green; margin-left:300px; margin-top:18px'>Ваша заявка успешно обработана! </h1>
+<table class = 'cred_table' style = 'background: white;
+border: 2px solid black;
+font-size: 35x;
+margin-left: 400px;
+margin-top: 20px;'>
+    
+    {% if cred_req %}
+    <tr><td>Имя</td><td>{{ cred_req.name }}</td></tr>
+    <tr><td>Фамилия</td><td>{{ cred_req.surname }}</td></tr>
+    <tr><td>Отчество</td><td>{{ cred_req.patronymic }}</td></tr>
+    <tr><td>Дата рождения</td><td>{{ cred_req.birthday }}</td></tr>
+    <tr><td>Идентификационный номер</td><td>{{ cred_req.passport_id }}</td></tr>
+    <tr><td>Номер карты</td><td>{{ cred_req.card_number }}</td></tr>
+    <tr><td>Номер телефона</td><td>{{ cred_req.number }}</td></tr>
+    <tr><td>Сумма кредита</td><td>{{ cred_req.sum_of_cred }}</td></tr>
+    <tr><td>Срок кредитования</td><td>{{ cred_req.period}}</td></tr>
+    {% endif%}
+
+</table>
+
+{% endblock %}

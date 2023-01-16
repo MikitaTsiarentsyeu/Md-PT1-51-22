@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block second_part %}
+{% endblock %}
+
+{% block third_part %}
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    <div class="contaner">
+        <div class="menu">
+            <div class="left_menu1" style="width:220px">
+              <p class="left_menu_text" style="color:black" >Частным лицам:</p>
+              <hr>
+            <p >Платежные карточки</p>
+              <p><a href="#" >Кредиты и лизинг</a></p>
+              <p >Вклады и инвестиции</p>
+              <p>Онлайн-сервисы</p>
+              <p >Денежные переводы</p>
+              <p >Обмен валют</p>
+              <p>Страхование</p>
+              <p>Комплексные продукты</p>
+              <p>Банковское обслуживание</p>
+              <p >Прочие услуги</p>
+      
+        </div>
+        
+              <p class="pop_prod" style="color:black">Потребительские кредиты:</p>
+              <div class="warning_potreb_kredits">
+                <a href="#" style="color:#147614">- Кредит на приобретение у СЗАО «БЕЛДЖИ» и его дилеров автомобилей 
+                  GEELY моделей Atlas, Atlas Pro, Coolray, Emgrand X7, Tugella, GS</a> <br>
+                  <a href="#" style="color:#147614">- Кредиты на приобретение товаров белорусских производителей</a>
+
+              </div>
+              <div class="card" style="width: 900px;height: 200px;position: absolute;margin-left: 300px;margin-top: 100px; border: 2px solid black;">
+                <img src="{% static "images/kred1.jpg" %}" style="width: 400px; height:200px; margin-left: -10px" class="card-img-top" alt="...">
+                
+                    <p style="position: absolute;margin-left: 450px;margin-top: 8px; font-size:large" > <a href="cred1" style="color:black;;font-size:25px; font-weight: 700;">Кредит на любые цели</a><br>
+                      - Выдача денег на карту за 15 минут <br>
+                    - Без справок о доходах<br>
+                    - До 3000 рублей 
+                    </p>
+                    
+        </div>
+        <div class="card" style="width: 900px;height: 200px;position: absolute;margin-left: 300px;margin-top: 320px; border: 2px solid black;">
+          <img src="{% static "images/kred2.jpg" %}" style="width: 400px; height:200px; margin-left: -10px" class="card-img-top" alt="...">
+          
+              <p style="position: absolute;margin-left: 450px;margin-top: 8px; font-size:large" > <a href="#" style="color:black;;font-size:25px; font-weight: 700;">Кредит «Приличные на личное»</a> <br>
+                - Выдача денег на карту за 30 минут <br>
+                - До 9000 рублей<br>
+              </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
