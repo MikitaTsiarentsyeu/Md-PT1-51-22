@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'post' post.id %}">
+                    {{ post.title|capfirst }}
+                    {% if post.id in viewed_posts %}
+                        | viewed
+                    {% endif %}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
