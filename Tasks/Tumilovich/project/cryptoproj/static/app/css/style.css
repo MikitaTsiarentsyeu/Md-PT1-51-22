@@ -1,0 +1,71 @@
+#header {
+    color: #ECF0F1;
+    background-color: #212F3D;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+    }
+
+#body {
+    color: #212F3D;
+    background-color: #EAECEE
+    display: flex;
+    height: 650px;
+
+}
+
+#footer {
+    color: #EAECEE ;
+    background-color: #212F3D;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page {
+    color: #ECF0F1;
+    text-decoration: none;
+    font-family: "Doki",sans-serif;
+
+}
+
+
+
+
+#page1 {
+    color: #EAECEE;
+    text-decoration: none;
+    font-family: "Doki",sans-serif;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    }
+
+#page2 {
+    color: #EAECEE;
+    text-decoration: none;
+    font-family: "Doki",sans-serif;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    }
+
+#page3 {
+    color: #EAECEE;
+    text-decoration: none;
+    font-family: "Doki",sans-serif;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    }
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

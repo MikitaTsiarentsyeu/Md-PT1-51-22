@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <h1 style="font-family: 'Doki',sans-serif;">Wanna know how crypto works?</h1>
+  <h3 style="font-family: 'Doki',sans-serif;">Stay with us :</h3>
+
+
+<form method = "POST" enctype="multipart/form-data" id="form2">
+    {% csrf_token%}
+
+    {{ form.as_p }}
+    <button type="submit">Subscribe!</button>
+
+</form>
+<p>*you will instantly get telegram bot that you like</p>
+
+{% endblock %}
+
+
+

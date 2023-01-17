@@ -1,0 +1,3 @@
+What bot can make:
+1. "Get crypto prices" - shows prices of few coins
+2. "Track price target" - you can set the price of coin (BTC or ETH) and get notification from bot  when it hits

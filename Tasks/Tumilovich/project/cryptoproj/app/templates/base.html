@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+{% load static %}
+<head>
+  <title>welcome to crypto world</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'app/css/style.css'%}">
+</head>
+<body style="display: contents">
+
+  <div id ='header'>
+    <div id="page1">
+      <a href="{% url 'home' %}" class="page">
+        WELCOME
+      </a>
+    </div>
+    <div id="page2">
+      <a href="{% url 'comments' %}" class="page">
+        COMMENTS
+      </a>
+      </div>
+    <div id="page3">
+      <a href="#" class="page">
+        ABOUT
+      </a>
+    </div>
+  </div>
+
+  <div style="display: flex;
+    background-color: #EAECEE;
+    align-items: center;
+    flex-direction: column;" id="body">
+
+      {% block content %}
+      {% endblock %}
+
+  </div>
+  <div id ='footer'>
+      <p> 2023 Powered by Django</p>
+  </div>
+</body>
+</html>
