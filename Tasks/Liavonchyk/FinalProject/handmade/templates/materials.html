@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <title>Materials</title>
+{% endblock %}
+
+{% block content %}
+    <h2>Materials that have been bought:</h2>
+    <ul style="list-style-type:decimal">
+        {% for material in materials %}
+            <li style="font-size: 18px; vertical-align: center; margin: 5;padding: 5px;">
+                <a href="{% url 'material' material.id %} " >
+                    {{ material.type|capfirst }} {{ material.trade_mark|capfirst }} {{ material.series|capfirst }} {{ material.color }} {{ material.article }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
