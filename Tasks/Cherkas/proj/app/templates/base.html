@@ -1,0 +1,31 @@
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="{% static '/css/app_style.css' %}" type="text/css">
+</head>
+<body>
+    <div  class="header" >
+        <div class="conteiner">
+            <div class="header-line">
+                <div class="header-logo" ><a   href="/"><img style="width: 120px" src="{% static 'app/img/logo1.png'%}" ></a></div>
+
+                <div class="nav">
+                    <a class="nav-items" href="/">Main</a>
+                    <a class="nav-items" href="/program/">Programs</a>
+                    
+                </div>
+            <div class="btn"><a class="button" href="/add/">Join</a></div>
+    
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="footer" >
+        <p>MadKids</p>
+    </div>
+</body>
+</html>
