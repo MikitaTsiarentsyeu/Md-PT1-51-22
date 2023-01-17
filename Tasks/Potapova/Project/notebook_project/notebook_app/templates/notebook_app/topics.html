@@ -1,0 +1,40 @@
+{% extends "notebook_app/base.html" %}
+
+{% block page_header %}
+<div class="d-flex bd-highlight">
+
+<div class="p-2 flex-grow-1 bd-highlight"><h1>Topics</h1></div>
+<div class="align-self-center">
+  <a href="{% url 'notebook_app:new_topic' %}"> Add new topic</a>
+</div>
+</div>
+
+{% endblock page_header %}
+
+{% block content %}
+
+        {% for topic in topics %}
+        <div class="d-flex bd-highlight card mb-3 card-header"
+             style="flex-direction: row; ">
+            <div class="p-2 flex-grow-1 bd-highlight w-50"> <h3 style="font-weight: 300">
+                <a href="{% url 'notebook_app:topic' topic.id %}">{{ topic|linebreaksbr|wordwrap:50 }}</a></h3>
+            </div>
+            <div class="p-2 bd-highlight ">
+                <form action="{% url 'notebook_app:edit_topic' topic.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-outline-primary">Edit name</button>
+                </form>
+            </div>
+            <div class="p-2 bd-highlight ">
+              <form action="{% url 'notebook_app:delete_topic' topic.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-outline-primary" >Delete topic</button>
+              </form>
+            </div>
+        </div>
+        {% empty %}
+        <h3>No topics have been added yet.</h3>
+        {% endfor %}
+
+
+{% endblock content %}

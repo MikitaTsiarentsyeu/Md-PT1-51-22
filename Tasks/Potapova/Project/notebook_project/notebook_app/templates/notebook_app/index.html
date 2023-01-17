@@ -1,0 +1,44 @@
+{% extends "notebook_app/base.html" %}
+
+{% block page_header %}
+  <div class="jumbotron">
+    <h1 class="display-3">Notebook</h1>
+
+    <p class="lead">
+In a constant stream of thoughts we urgently need to write something down
+until the worthwhile thought has yet been replaced by another.
+<br>We created a notepad app to keep your thoughts safe. Now you can use it to store all of your notes in one place
+and easily get rid of already irrelevant information without unnecessary losses.
+<br>So let's make some notes ^.^ </p>
+
+
+    {% if not user.username %}
+    <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+        role="button">Register &raquo;</a>
+    <a class="btn btn-lg btn-primary" href="{% url 'users:login' %}"
+        role="button">Log in &raquo;</a>
+    {% else %}
+    <a class="btn btn-lg btn-primary" href="{% url 'notebook_app:topics' %}"
+    role="button">Go to Topics &raquo;</a>
+    {% endif %}
+
+  </div>
+
+
+
+{% endblock page_header %}
+
+
+{% block content %}
+{% if viewed_notes %}
+<p>Seen recently:</p>
+    <ul>
+        {% for viewed_note in viewed_notes %}
+        <li>
+            <a href="{% url 'notebook_app:view_note' viewed_note.id viewed_note.topic_id %}">{{viewed_note.note_name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock content %}
+

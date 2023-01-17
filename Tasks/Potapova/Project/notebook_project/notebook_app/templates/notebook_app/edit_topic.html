@@ -1,0 +1,24 @@
+{% extends "notebook_app/base.html" %}
+
+{% block page_header %}
+<h1>Edit topic:</h1>
+{% endblock page_header %}
+
+
+{% block content %}
+<p>Please enter a new name for topic "{{topic}}"</p>
+  <form action="{% url 'notebook_app:edit_topic' topic.id %}" method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="card mb-3">
+    {{ form.topic_name }}
+    </div>
+    {% for field, errors in form.errors.items %}
+        {% for error in errors %}
+            {{errors}}
+        {% endfor %}
+    {% endfor %}
+    <button name='submit' class="btn btn-primary" >save changes</button>
+  </form>
+
+{% endblock content %}
