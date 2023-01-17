@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="form-main"><div id="form-name"><h1>New application</h1>
+    <form method = 'POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        <div >
+            {% for field in form %}
+            <div class="form-group">
+                {{field.label_tag}}
+                <div class="field">{{field}}</div>
+                <div class="error">{{field.errors}}</div>
+                
+            </div>
+            {% endfor %}
+            </div>
+        
+        <button class="button" style="margin-top: 10px; font-family: Comic Sans MS, Comic Sans, cursive" type="submit">Join</button>
+    </form>
+    </div>
+    </div>     
+{% endblock %}   
