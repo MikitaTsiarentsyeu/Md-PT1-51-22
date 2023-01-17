@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block title %}Преимущества{% endblock%}
+
+{% block content %}
+
+<section id="advantages" class="promo_section bd-bottom padding">
+	<div class="section_heading align-center mb-40">
+		<h2>Преимущества сотрудничества</h2>
+	</div>
+	<div class="container">
+		<div class="col-md-4 col-xs-6 sm-padding">
+			<div class="promo_item align-center">
+				<i class=" icon-target"></i>
+				<h3 class="">Профессионализм</h3>
+				<p>Профессиональный риэлтор: умею находить контакт с любым, даже самым сложным собеседником</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-6 sm-padding">
+			<div class="promo_item align-center">
+				<i class="  icon-briefcase"></i>
+				<h3 class="">Безопасность</h3>
+				<p>Юридическая безопасность: каждую сделку сопровождает высококлассный юрист-профессионал</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-6 sm-padding">
+			<div class="promo_item align-center">
+				<i class=" icon-wallet"></i>
+				<h3 class="">Честность</h3>
+				<p>Оплата только за результат: Вы платите за оказанную мною услугу в день совершения сделки</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-6 sm-padding">
+			<div class="promo_item align-center">
+				<i class=" icon-camera"></i>
+				<h3 class="">Фотосъёмка</h3>
+				<p>Профессиональная фотосъемка: опытный фотограф проведёт фотосессию вашей недвижимости</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-6 sm-padding">
+			<div class="promo_item align-center">
+				<i class=" icon-magnifying-glass"></i>
+				<h3 class="">Поиск</h3>
+				<p>Поиск покупателя: я самостоятельно ищу покупателя для Вашего объекта и готовлю сделку под ключ</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-6 sm-padding">
+			<div class="promo_item align-center">
+				<i class=" icon-newspaper"></i>
+				<h3 class="">Реклама</h3>
+				<p>Подключение рекламного канала: запускаю рекламу Вашей недвижимости с продающими описаниями</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-6 sm-padding">
+			<div class="promo_item align-center">
+				<i class=" icon-chat"></i>
+				<h3 class="">Переговоры</h3>
+				<p>Проведу переговоры с клиентами и их представителями: мои знания и опыт защитят Ваши интересы</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-6 sm-padding">
+			<div class="promo_item align-center">
+				<i class=" icon-piechart"></i>
+				<h3 class="">Торг</h3>
+				<p>Умею найти разумный компромисс между ценой, выгодной для продавца, и ценой, интересной для покупателя
+				</p>
+			</div>
+		</div>
+		<div class="col-md-4 col-xs-6 sm-padding">
+			<div class="promo_item align-center">
+				<i class=" icon-heart"></i>
+				<h3 class="">Надёжность</h3>
+				<p>Я работаю через агентство: в наличии специальное разрешение (лицензия), каждая сделка страхуется</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section id="whyiam" class="why_section bd-bottom padding">
+	<div class="container-fluid no-padding">
+		<div class="why_img hidden-xs">
+			<div class="img" style="background-image: url(static/bootstrap/img/why-bg.jpg);"></div>
+		</div>
+		<div class="col-sm-6 col-sm-offset-6">
+			<div class="why_contant">
+				<h2>Услуги</h2>
+				<p>Вы не меняете привычного уклада жизни, не тратите время, нервы и деньги на беседы с любопытствующими
+					и праздно интересующимися. Спокойно работаете и отдыхаете, пока я ищу для Вас варианты и готовлю
+					сделку "под ключ". Ваше общение о цене и условиях проведения сделки происходит только с реальными
+					покупателями.</p>
+				<ul class="list">
+					<li>Безопасность и конфиденциальность: до проведения сделки, во время её проведения и после
+						заключения договора</li>
+					<li>Достоверность всей предоставляемой клиенту информации, тщательная проверка предлагаемых к
+						рассмотрению объектов</li>
+					<li>Чистота и прозрачность сделок, никаких "подводных камней"</li>
+					<li>Возможны варианты доверительного управления недвижимостью</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section id="contact" class="contact_section bg-grey bd-bottom padding">
+	<div class="container">
+		<div class="section_heading mb-40 align-center">
+			<p>Давайте работать вместе! Просто пришлите мне электронное письмо:</p>
+		</div>
+		<div class="section_heading mb-40 align-center">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<div class="contact_form">
+						<form method="post">
+							{% csrf_token %}
+							<div class="form-group">
+								<div class="col-sm-6">
+									{{ form_mail.user_name }}<br>
+								</div>
+								<div class="col-sm-6">
+									{{ form_mail.user_mail }}<br>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-12">
+									{{ form_mail.user_comment }}<br>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-12 align-center">
+									<button type="submit" class="fs_btn" action="{% url 'modal' %}">Отправить
+										сообщение</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+
+
+{% endblock %}

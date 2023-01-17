@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html >
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static "css/style.css" %}" />
+        <script src="{% static "js/script.js" %}"></script>
+        <script src="{% static "js/jquery-3_0_0.min.js" %}"></script>
+        <script src="{% static "js/jquery-3.3.1.js" %}"></script>
+    </head>
+
+<body>
+
+   
+        <header>
+            <div class="container">
+                <ul class="menu">
+                    <li class="menu_item"><a href="#" class="menu_link">Главная</a></li>
+                    <li class="menu_item"><a href="#" class="menu_link">О банке</a></li>
+                    <li class="menu_item"><a href="#" class="menu_link">Частным лицам</a></li>
+                    <li class="menu_item"><a href="#" class="menu_link">Малому и среднему бизнесу</a></li>
+                    <li class="menu_item"><a href="#" class="menu_link">Крупному бизнесу</a></li>
+                    <li class="menu_item"><a href="#" class="menu_link">Финансовым организациям</a></li>
+                        </ul>
+                </div>
+         </header>
+
+<div class="cont1">
+    <img src= "{% static "images/1.jpg" %}" style="height: 100px; width:1250px;"  >
+          
+<div class="subheader1">
+    <div class="container">
+            <ul class="menu">
+                <li class="menu_item"><a href="#" class="menu_link">Платежные карточки</a></li>
+                <li class="menu_item"><a href="cred_lizing" class="menu_link" >Кредиты и лизинг</a></li>
+                <li class="menu_item"><a href="#" class="menu_link">Вклады и инвестиции</a></li>
+                <li class="menu_item"><a href="#" class="menu_link">Онлайн-сервисы</a></li>
+                <li class="menu_item"><a href="#" class="menu_link">Обмен валют</a></li><br>
+                <li class="menu_item"><a href="#" class="menu_link">Денежные переводы</a></li>
+                <li class="menu_item"><a href="#" class="menu_link">Страхование</a></li>
+                <li class="menu_item"><a href="#" class="menu_link">Комплексные продукты</a></li>
+                <li class="menu_item"><a href="#" class="menu_link">Банковское обслуживание</a></li>
+                <li class="menu_item"><a href="#" class="menu_link">Прочие услуги</a></li>
+                   </ul>
+            </div>
+    </div>   
+    
+{% block second_part %}
+<div class="main">
+    <p class="pop_prod_kred">Кредит на любые цели</p>
+    <img src="{%static "images/potreb_kred_kred1.jpg"%}" 
+      style="height:350px; margin-left: 50px; width:1150px"> 
+</div>     
+{% endblock %}
+
+{% block third_part %}
+<div class="subheader2">
+    <div class="container">
+      <ul class="menu">
+        <li class="menu_item"><a href="cred1" class="menu_link" style="color: black;font-size:25px; " onmouseover="this.style.backgroundColor='yellow';"onmouseout="this.style.backgroundColor='white';">Оформление кредита</a></li>
+        <li class="menu_item"><a href="details" class="menu_link" style="color: black;font-size:25px"onmouseover="this.style.backgroundColor='yellow';"onmouseout="this.style.backgroundColor='white';">Подробности</a></li>
+        <li class="menu_item"><a href="review" class="menu_link" style="color: black;font-size:25px"onmouseover="this.style.backgroundColor='yellow';"onmouseout="this.style.backgroundColor='white';">Отзывы</a></li>
+        <li class="menu_item"><a href="consultation" name = "bottom" class="menu_link" style="color: black;font-size:25px"onmouseover="this.style.backgroundColor='yellow';"onmouseout="this.style.backgroundColor='white';">Консультация</a></li>
+            </ul>
+          </div>
+      </div>    
+      <hr style="color: black;">
+{% endblock %}
+    
+{% block content %}
+
+{% endblock %}
+
+<hr style="margin-bottom: 0px;">
+
+<img src="{% static "images/footer_img.png" %}" style="height: 200px; width:100%;"  >
+
+</div>
+<footer>
+    <div class="info">
+        © 2001-2022, ОАО «АСБ Беларусбанк»
+        г. Минск <br> GerLis
+    </div>
+</footer>
+
+</body>
+</html>

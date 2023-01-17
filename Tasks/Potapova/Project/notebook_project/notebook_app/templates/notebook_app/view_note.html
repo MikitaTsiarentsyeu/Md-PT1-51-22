@@ -1,0 +1,41 @@
+{% extends "notebook_app/base.html" %}
+{% block content %}
+
+<div class=" card mb-3 " >
+    <div class="d-flex bd-highlight card-header" style="flex-direction: row;">
+        <div class="p-2 flex-grow-1 bd-highlight w-50">
+            <h4>{{note.note_name}}</h4>
+        </div>
+        <div class="p-2 bd-highlight">
+              <form action="{% url 'notebook_app:edit_note' note.id %}" method="get">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-outline-primary">Edit note</button>
+              </form>
+        </div>
+        <div class="p-2 bd-highlight">
+              <form action="{% url 'notebook_app:delete_note' note.id topic.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-outline-primary" >Delete note</button>
+              </form>
+        </div>
+
+    </div>
+
+    <div class="card-body">
+        <p style="text-align: right">{{note.date_added|date:'M d, Y H:i'}}</p>
+        <p>{{note.text|linebreaks}} </p>
+        <p style="text-align: center">
+            {% if note.img %}
+                <img  class="img-fluid rounded-start" src="{{ note.img.url }}">
+            {% endif %}
+        </p>
+    </div>
+
+
+
+
+</div>
+{% endblock content %}
+
+
+

@@ -1,0 +1,14 @@
+
+{% extends "notebook_app/base.html" %}
+
+{% block content %}
+
+  <form method="post" action="{% url 'users:register' %}" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name='submit' class="btn btn-primary">register</button>
+    <input type="hidden" name="next"
+           value="{% url 'notebook_app:index' %}" />
+   </form>
+
+{% endblock content %}

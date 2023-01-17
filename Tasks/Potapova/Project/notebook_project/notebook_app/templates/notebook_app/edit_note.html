@@ -1,0 +1,40 @@
+{% extends "notebook_app/base.html" %}
+
+{% block page_header %}
+<h1>Edit note:</h1>
+{% endblock page_header %}
+
+
+{% block content %}
+
+<form action="{% url 'notebook_app:edit_note' note.id %}" method='post' enctype="multipart/form-data">
+      {% csrf_token %}
+
+<div class="card mb-3">
+  <div class="card-header">
+      <div class="card">
+          {{form.note_name}}
+      </div>
+      {% for field, errors in form.errors.items %}
+        {% for error in errors %}
+            {{errors}}
+        {% endfor %}
+      {% endfor %}
+  </div>
+
+  <div class="card-body">
+      <p style="text-align: right">{{note.date_added|date:'M d, Y H:i'}}</p>
+      <div class="card mb-3">
+        {{form.text}}
+      </div>
+          <div class="card mb-3"> {{form.topic}}
+          </div>
+          <div class="mb-3">
+              {{form.img}}
+          </div>
+      <button name='submit' class="btn btn-primary" >save changes</button>
+  </div>
+</div>
+</form>
+
+{% endblock content %}

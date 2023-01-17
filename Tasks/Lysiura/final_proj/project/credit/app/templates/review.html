@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block second_part %}
+{% endblock %}
+    
+{% block content %}
+   
+<div class="procedure">
+<p style=" text-align:center;
+padding-top: 30px;
+font-size: 35px;
+font-weight: 500;
+color: #147614;;">Была ли страница полезна? <br>Оставьте ваш отзыв: </p>
+
+<form method="POST" action ='review_quest/' >
+  {% csrf_token %}
+      <p style = 'text-align:center'><textarea rows="2" cols="50" name="question" ></textarea></p>
+      <div>{{warning}} </div>
+  
+  <input type="submit" style="text-align:center" class="btn1" value="Отправить" >
+</form>
+<hr style="color: black;">
+<p style=" text-align:center;
+padding-top: 30px;
+font-size: 35px;
+font-weight: 500;
+color: #147614;;">Ваши отзывы: </p>
+
+{% if reviews.count > 0 %}
+  {% for review in reviews %}
+  <div class = 'review'>
+  <div class = 'review1'><p>{{ review.question }}</p> </div>
+  <div class = 'review2'><p>{{ review.date }}</p> </div>
+  </div>
+  {% endfor %}
+{% endif %}
+  </div>
+
+{% endblock %}
+

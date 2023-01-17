@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block title %}Риэлтор в Минске: Наталья Дашкевич{% endblock%}
+
+{% block content %}
+
+
+<section id="home" class="hero_section overlay">
+    <div class="display-table">
+        <div class="table-cell">
+            <div class="container">
+                <div class="col-sm-8">
+                    <div class="hero_content">
+                        <h1 class="text-white">Риэлтор в Минске</h1>
+                        <p>Специализация - недвижимость в городе Минске и ближнем пригороде: элитная VIP-недвижимость, дома и квартиры, новостройки и недвижимость на вторичном рынке.</p>
+                        <a href="{% url 'advertisement' %}#advantages" class="fs_btn">Подробнее</a>
+                    </div>
+                </div>
+              <div>
+				<div class="col-sm-4">
+					<div class="form_container">
+						<form method="post">
+							{% csrf_token %}
+							<h2 class="text-white fz-24">Вам перезвонить?</h2>		
+							<div>
+									{{form.user_name}}<br>
+									{{form.user_phone}}<br>
+									{{form.user_mail}}<br>
+									<br>
+									<button type="submit" class="fs_btn" action="{%url 'modal'%}">Заказать звонок</button>						
+							</div>					
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</section>
+
+
+<section id="objcts" class="properties_section bg-grey bd-bottom padding">
+    <div class="container">
+        <div class="section_heading align-center mb-40">
+            <h2>Объекты недвижимости</h2>
+            <p>Профессиональный риэлтор - человек, от которого во многом зависит качество вашей жизни, степень комфорта и душевного равновесия. За более, чем десятилетний стаж работы на рынке недвижимости, в моём портфолио собрано огромное количество успешно проведённых сделок с недвижимостью и отзывы сотен благодарных клиентов. Многие из них стали для меня не только клиентами, а и добрыми знакомыми, которым удалось помочь с решением в первую очередь "жилищного" вопроса. Только некоторые из самых ярких эмоций и впечатлений:</p>
+        </div>
+        <div class="pro_items">
+        	<div class="col-md-4 col-xs-6 sm-padding">
+                <div class="pro_post">
+                	<figure>
+                		<img src="static/bootstrap/img/pro-1.jpg" alt="blog-image">
+                	</figure>
+                    <div class="pro_content">
+                        <h4><a href="#">​Minsk World</a></h4>
+                        <span class="post_meta">1, 2, 3-х комнатные квартиры</span>
+                        <P>Недвижимость в комплексе ​Minsk World - хорошее расположение домов, развитая инфраструктура, уютные светлые апартаменты с панорамными окнами и многое другое...</P>
+						</div>				
+                </div>
+            </div>
+        </div>
+        <div class="pro_items">
+        	<div class="col-md-4 col-xs-6 sm-padding">
+                <div class="pro_post">
+                	<figure>
+                		<img src="static/bootstrap/img/pro-2.jpg" alt="blog-image">
+                	</figure>
+                    <div class="pro_content">
+                        <h4><a href="#">Vogue</a></h4>
+                        <span class="post_meta">1, 2, 3-х комнатные квартиры</span>
+                        <P>Недвижимость в комплексе Парк Челюскинцев - зелёная зона в центре Минска, фантастический вид из окон квартир, свободные планировки и терассы под навесами...</P>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pro_items">
+        	<div class="col-md-4 col-xs-6 sm-padding">
+                <div class="pro_post">
+                	<figure>
+                		<img src="static/bootstrap/img/pro-3.jpg" alt="blog-image">
+                	</figure>
+                    <div class="pro_content">
+                        <h4><a href="#">Маяк</a></h4>
+                        <span class="post_meta">1, 2, 3-х комнатные квартиры</span>
+                        <P>Недвижимость в комплексе Маяк - восточные ворота Минска, терассы, пентхаусы, свободные планировки, эксклюзивные архитектурные решения и многое другое...</P>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="testimonial" class="testimonial_section padding">
+	<div class="container">
+		<div class="col-sm-10 col-sm-offset-1 no-padding">
+			<ul id="testi_carousel" class="owl-carousel testi_items">
+				<li class="testi_item">
+					<div class="testi_content align-center">
+						<img src="static/bootstrap/img/testimonial-1.jpg" alt="Иван Иванов">
+						<p>ЖК "Микеланджело" lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<h4>Иван Иванов, ЖК "Микеланджело"</h4>
+					</div>
+				</li>
+				<li class="testi_item">
+					<div class="testi_content align-center">
+						<img src="static/bootstrap/img/testimonial-2.jpg" alt="Надежда Надеждина">
+						<p>ЖК "Гоген" duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<h4>Надежда Надеждина, ЖК "Гоген"</h4>
+					</div>
+				</li>
+				<li class="testi_item">
+					<div class="testi_content align-center">
+						<img src="static/bootstrap/img/testimonial-3.jpg" alt="Пётр Петров">
+						<p>ЖК "Парк Челюскинцев" ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<h4>Пётр Петров, ЖК "Парк Челюскинцев"</h4>
+					</div>
+				</li>
+				<li class="testi_item">
+					<div class="testi_content align-center">
+						<img src="static/bootstrap/img/testimonial-4.jpg" alt="Людмила Людмилова">
+						<p>ЖК "Венеция" excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+						<h4>Людмила Людмилова, ЖК "Венеция"</h4>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+{% endblock%}

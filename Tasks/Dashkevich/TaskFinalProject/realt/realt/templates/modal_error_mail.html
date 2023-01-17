@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Modal error{% endblock%}
+
+{% block content %}
+<style>
+    .div-content {
+        padding-top: 10%;
+        margin-bottom: 10%;
+    }
+</style>
+
+<div class="div-content">
+    <div class="section_heading align-center">
+        <h2>Ошибка!</h2>
+        <h3>Заполните данные формы верно</h3>
+        <form action="{% url 'advertisement' %}#contact">
+            <button type="submit" class="fs_btn">Вернуться к форме</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

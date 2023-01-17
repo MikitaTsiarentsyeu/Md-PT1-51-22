@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="menu">
+
+  
+    <div class="procedure">
+    <p style=" margin-left: 500px;
+    padding-top: 30px;
+    font-size: 35px;
+    font-weight: 500;
+    color: #147614;;">Плюсы кредита</p>
+    <div class="card" style="width: 30rem;height: 200px;margin-left: 100px;margin-top: 25px; border: 2px solid black;">
+    <img src="{% static "images/tiles1_desktop-min.png" %}" style="margin-left: 280px; width:12rem"  class="card-img-top" alt="...">
+
+    <p style="position: absolute;margin-left: 10px;margin-top: 10px; " > <a href="" style="color:black;text-decoration: none;font-size:25px; font-weight: 600;">Оформление за 15 минут</a></p>
+    <p style="position: absolute;margin-left: 10px;margin-top: 60px; " > - Заполняете заявку онлайн <br>
+    - Ожидаете решение в короткий срок <br>
+    - Получаете деньги на карту в тот же день</p>
+    </div>
+    <div class="card" style="width: 30rem;height: 200px;margin-left: 100px;margin-top: 25px; border: 2px solid black;">
+    <img src="{% static "images/tiles2_desktop-min.png" %}" style="margin-left: 280px;width:12rem"  class="card-img-top" alt="...">
+    <p style="position: absolute;margin-left: 55px;margin-top: 40px; " > <a href="" style="color:black;text-decoration: none;font-size:25px; font-weight: 600;">Никаких справок </p>
+      
+    </div>
+    <div class="card" style="width: 30rem;height: 200px;margin-left: 700px;margin-top: -425px; border: 2px solid black;">
+    <img src="{% static "images/tiles3_desktop-min.png" %}" style="margin-left: 280px;width:12rem; margin-top: 16px; height:140px"  class="card-img-top" alt="...">
+    <p style="position: absolute;margin-left: 10px;margin-top: 10px; " > <a href="" style="color:black;text-decoration: none;font-size:25px; font-weight: 600;">Честные условия</a></p>
+    <p style="position: absolute;margin-left: 10px;margin-top: 60px; " > Без скрытых комиссий и платежей,<br> страховка — только по желанию
+    <br>
+
+    </div>
+
+    <div class="card" style="width: 30rem;height: 200px;margin-left: 700px;margin-top: 25px; border: 2px solid black;">
+    <img src="{% static "images/tiles4_desktop-min.png" %}" style="margin-left: 280px;width:12rem" class="card-img-top" alt="...">
+
+    <p style="position: absolute;margin-left: 10px;margin-top: 10px; " > <a href="" style="color:black;text-decoration: none;font-size:25px; font-weight: 600;">Удобно гасить</a></p>
+    <p style="position: absolute;margin-left: 10px;margin-top: 60px; " > Выбирайте день, когда вам удобно <br>
+    платить, полностью или частично гасите  <br>
+    кредит раньше срока без комиссий</p>
+    </div>
+    </div>
+    <hr style="color: black;margin-top:40px">
+    <p style=" margin-left: 400px;
+    padding-top: 30px;
+    font-size: 35px;
+    font-weight: 500;
+    color: #147614;">Алгоритм получения кредита</p>
+
+    <img src="{% static "images/Alg_img.png" %}" style="width: 100%;">
+    <hr style="color: black;margin-top:40px">
+    <div>
+    <div class="cont">
+    <p style=" margin-left: 340px;
+    padding-top: 30px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #147614;">Являетесь клиентом банка и пользуетесь картой?</p>
+    <div class="btn-group" style="margin-left: 35%; margin-top: 16px">
+    <button type="button" class="btn " data-toggle="popover_left" title="Оформите заявку онлайн, дождитесь решения банка и получите деньги на карту в кратчайшие сроки." data-content="Оформите заявку онлайн, дождитесь решения банка и получите деньги на карту в кратчайшие сроки">Да</button>
+    <button type="button" class="btn " data-toggle="popover_right" title="Оформите заявку в любом отделении банка. При себе необходимо иметь паспорт." data-content="">Нет</button>
+
+    </div>
+    </div>
+    <hr style="color: black;margin-top:40px">
+    <main>
+    <article>
+    <div>
+    <h1 style=" margin-left: 400px;
+    padding-top: 30px;
+    font-size: 35px;
+    font-weight: 500;
+    color: #147614;" >Заполните заявку на кредит </h1>
+    <p style=" margin-left: 260px;
+    margin-top:10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: black">Для оформления заявки на кредит, введите свои данные, 
+      как указано в паспорте.<br> Мы должны убедиться, что вы клиент банка.
+    <br><br>
+  Выплаты по кредиту осуществляются ежемесячно. Ставка рефинансирования - 12%</p>
+  <form method="POST" action = 'cred_request' >
+    {% csrf_token %}
+  <div class="main_cred">
+  <div class="one_part">
+  <p class="cred">Ваше имя:<span class="required"></span></p>
+  <input required type="text" id="name" name="name" placeholder="Введите Имя" pattern="^[а-яА-Я]+$"  required />
+
+  <p class="cred">Фамилия<span class="required"></span></p>
+  <input required type="text" id="surname" name="surname" placeholder="Введите Фамилию" pattern="^[а-яА-Я]+$"  required />
+
+  <p class="cred">Отчество:<span class="required"></span></p>
+  <input required type="text" id="lastname" name="lastname" placeholder="Введите Отчество" pattern="^[а-яА-Я]+$"  required />
+  <p class="cred">Дата рождения<span class="required"></span></p>
+  <input required type="date" id="date" name="date" placeholder="Введите дату"   required />
+  <p class="cred">Идентификационный <br>номер паспорта:<span class="required"></span></p>
+
+  <input required type="text" id="pass" name="pass" placeholder="MP4050800"   required />
+  </div>
+
+  <div class="second_part"> 
+    <p class="cred">Номер карты:<span class="required"></span></p>
+    <input required type="text" id="card" name="card" maxlength="16"  placeholder="1111222233334444"  required />
+    <p class = 'cred'>Номер телефона:<span class="required"></span></p>
+    <input type="tel" id="phone" name="phone" placeholder="375447001992" required>
+    <br>
+  <p class="cred">Выберите сумму кредита:</p>
+  <input type="range" step="25"  min="300" max="3000" id="r1" name="r1" oninput="fun1()">
+
+  <p class="one" id="one"></p>
+  <p class="one" id="two"></p>
+  <p class="cred">Срок кредита (в месяцах):</p>
+  <input type="range" id="r2"  min="1" max="12" name="r2" oninput="fun2()">
+  <p id="three"></p>
+  <p id="exp"></p>
+  
+  </div>
+  </div>
+  <br><br>
+  <p style = 'text-align:center;font-size:25px; color:red; font-weight: 500'>{{warning}}</p>
+  <input type="submit" style="margin-left: 550px" class="btn1" value="Отправить" >
+  </form>
+  </div>
+  </article>
+  </main>
+
+  </div>
+    </div>
+
+{% endblock  %}
