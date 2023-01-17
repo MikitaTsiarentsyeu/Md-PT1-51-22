@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<form  method = "POST" enctype="multipart/form-data" id="form2">
+    {% csrf_token%}
+
+    {{ form.as_p }}
+    <button type="submit">Post</button>
+
+</form>
+<div id="form3">
+{% for i in comments %}
+      <li style="display:flex">
+
+          {{ i.comment }}
+           {{ i.name }}
+           {{ i.issued }}
+
+      </li>
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}
