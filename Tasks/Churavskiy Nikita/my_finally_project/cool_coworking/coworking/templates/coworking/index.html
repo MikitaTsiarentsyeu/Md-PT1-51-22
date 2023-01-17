@@ -1,0 +1,23 @@
+{% extends 'coworking/base.html' %} {% block title %} Belarus {% endblock %}
+{%block content %}
+<div class="sss">
+  <div class="ccc">
+    {% for i in city %}
+    <h2>
+      {{ i }}
+      <a class="link-read-post" href="{{ i.get_absolute_url }}">
+        <p style="font-size: 80%; background-color: #b98282; color: #fcf7ff">
+          читать подробнее о городе
+        </p></a
+      >
+      адреса коворкингов:
+    </h2>
+    <img src="{{ i.photo.url }}" />
+    {% for i2 in result %} {% if i2.cat_id == i.id %}
+    <ul>
+      <li>{{ i2.street }} {{ i2.num }}, конт.тел{{ i2.number }};</li>
+    </ul>
+    {% endif %} {% endfor %} {% endfor %}
+  </div>
+</div>
+{% endblock %}

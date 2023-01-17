@@ -1,0 +1,18 @@
+{% extends 'coworking/base.html' %} {% block title %} Главная
+страница{%endblock%} {% block content %} {% for i in result %}
+<div class="alert alert-warning">
+  <div class="someres">
+    <div style="float: right; margin-top: 20px; margin-right: 1%">
+      дата создания: {{ i.time_create }}
+    </div>
+    <div style="float: left; margin-top: 15px; margin-left: 1%">
+      <h2>{{ i.title }}</h2>
+    </div>
+  </div>
+  <p>{{ i.content }}</p>
+  {% if i.photo %}
+  <p>
+    <img class="left thumb" src="{{ i.photo.url }}" />
+  </p>
+</div>
+{% endif %} {% endfor %} {% endblock %}
