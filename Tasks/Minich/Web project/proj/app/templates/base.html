@@ -1,0 +1,39 @@
+{% load static %}
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<meta name="description" content="description"/>
+<meta name="keywords" content="keywords"/> 
+<meta name="author" content="Arcsin, http://shablonfree.ru/"/> 
+<link rel="stylesheet" type="text/css" href="{% static 'app/css/MyStyle.css' %}"/>
+<title>Bright Pixel</title>
+</head>
+<body>
+<div class="main">
+
+	<div class="container"><div class="inner_copy"><div class="inner_copy"></div></div>
+		<div class="gfx"><img src="{% static 'app/img/img_2022.jpg' %}" width="600"/><span></span></div>
+		<div class="menu">
+			{% if user.is_authenticated %}
+				<a href="{% url 'logout' %}?next={{request.path}}"><span>{{ user.get_username }}<br></span><span>Log out</span></a>
+			{% else %}
+				<a href="{% url 'login' %}?next={{request.path}}"><span><b>Step 1</b><br><span>Log in</span></a>
+			{% endif %}
+			<a href="/add_statement/"><span><b>Step 2</b><br><span>New application</span></a>
+			<a href="/statements_user/"><span><b>Step 3</b><br><span>Account & statements</span></a>		
+			<a href="/about/"id="last"><span>About</span></a>
+		</div>
+		<div class="content">
+			    {% block item %}
+                {% endblock %}
+        </div>
+		<div class="footer">
+			<span class="left"><a href="/index/">Start page</a></span>
+			<span class="right">Powered by Django</a></div>
+			<div class="center"></a></div>
+			<div class="clearer"></div>
+		</div>
+	</div>	
+</div>
+</body>
+</html>
