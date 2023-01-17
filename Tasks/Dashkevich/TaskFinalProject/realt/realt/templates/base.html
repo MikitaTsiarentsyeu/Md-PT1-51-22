@@ -1,0 +1,133 @@
+<!doctype html>
+
+<html class="no-js" lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Риэлтор в Минске: Наталья Григорьевна Дашкевич">
+    <meta name="author" content="Наталья Григорьевна Дашкевич">
+
+    <title>{% block title %} {% endblock%}</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="static/bootstrap/img/favicon.png">
+    <link rel="stylesheet" href="static/bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/bootstrap/css/elegant-font-icons.css">
+    <link rel="stylesheet" href="static/bootstrap/css/elegant-line-icons.css">
+    <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap/css/animate.min.css">
+    <link rel="stylesheet" href="static/bootstrap/css/venobox/venobox.css">
+    <link rel="stylesheet" href="static/bootstrap/css/owl.carousel.css">
+    <link rel="stylesheet" href="static/bootstrap/css/main.css">
+    <link rel="stylesheet" href="static/bootstrap/css/menu.css">
+    <link rel="stylesheet" href="static/bootstrap/css/responsive.css">
+
+    <script src="static/bootstrap/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="60">
+    <div id='preloader'>
+        <div class='loader'>
+            <img src="static/bootstrap/img/three-dots.svg" width="60" alt="">
+        </div>
+    </div>
+
+
+    <header id="header" class="header_section">
+        <nav id="navbar_wrap" class="navbar header" style="background: #339">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="nav-btn navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Мобильное меню</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav nav-menu">
+                        <li><a href="{% url 'home' %}">Главная</a></li>
+                        <li><a href="{% url 'home' %}#objcts">Объекты</a></li>
+                        <li><a href="{% url 'home' %}#testimonial">Отзывы</a></li>
+                        <li><a href="{% url 'advertisement' %}">Преимущества</a></li>
+                        <li><a data-scroll href="{% url 'advertisement' %}#whyiam">Услуги</a></li>
+                        <li><a href="{% url 'advertisement' %}#contact">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    {% block content %}
+
+    {% endblock%}
+
+
+    <section class="footer_section bg-dark padding">
+        <div class="container">
+            <div class="col-md-3 col-xs-6 sm-padding">
+                <div class="footer_content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua</p>
+                    <ul class="social_links">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 sm-padding">
+                <div class="footer_content">
+                    <h3>Ссылки</h3>
+                    <ul class="links">
+                        <li><a href="{% url 'advertisement' %}">Преимущества</a></li>
+                        <li><a href="{% url 'home' %}#objcts">Объекты</a></li>
+                        <li><a href="{% url 'home' %}#testimonial">Отзывы</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-xs-6 sm-padding">
+                <div class="footer_content">
+                    <h3>Контакты</h3>
+                    <p class="address">
+                        <i class="fa fa-envelope"></i> 8587749@mail.ru<br>
+                        <i class="fa fa-phone"></i> +375 29 8587749</a><br>
+                        <i class="fa fa-globe"></i> <a href="#">www.site.com</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-6 sm-padding">
+                <div class="footer_content">
+                    <h3>Адрес</h3>
+                    <p class="address">
+                        <i class="fa fa-home"></i> prosp Pushkin, Minsk<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-dark">
+        <p>&copy; 2023 Katrin Dash Limited Inc.</p>
+    </footer>
+
+    <a data-scroll href="#header" id="scroll-to-top"><i class="arrow_carrot-up"></i></a>
+
+    <script src="static/bootstrap/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="static/bootstrap/js/vendor/jquery.waypoints.v2.0.3.min.js"></script>
+    <script src="static/bootstrap/js/vendor/bootstrap.min.js"></script>
+    <script src="static/bootstrap/js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="static/bootstrap/js/vendor/owl.carousel.min.js"></script>
+    <script src="static/bootstrap/js/vendor/smooth-scroll.min.js"></script>
+    <script src="static/bootstrap/js/vendor/venobox.min.js"></script>
+
+    <script src="static/bootstrap/js/contact.js"></script>
+    <script src="static/bootstrap/js/main.js"></script>
+    <scrip src="static/bootstrap/js/main.js"></script>
+</body>
+
+</html>
