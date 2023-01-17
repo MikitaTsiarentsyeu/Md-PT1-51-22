@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block item %}
+<div class="item">
+    {% if user.is_authenticated %}    
+        {% for statement in list_data %}
+        <td>{{statement.date_st}}</td><td>{{statement.insurance_num}}</td><td> <td>{{statement.brand}}</td><td> </td><td>{{statement.model}}</td><td> - </td><td>status - {{statement.status_st.}}</td><br>
+        {% endfor %}
+    {% else %}
+
+    <div class="item">
+        <h1>Please login!</h1>
+    </div>
+
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block item %}
+<div class="item">
+    <h1>Sorry, your insurance number or e-mail was not found! Try again, please.</h1>
+    <form action="/add_statement/">
+    <button type="submit" id="button_back">Back</button>
+    </form>
+</div>
+{% endblock %}

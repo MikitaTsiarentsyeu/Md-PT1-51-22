@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block item %}
+<div class="item">
+    <h1>Insurance case. New application</h1>
+    <div class="form_main">
+    <form method="POST" enctype="multipart/form-data">
+        <div class="add_form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Send</button>
+        </div>
+    </form> 
+    </div>  
+</div>
+{% endblock %}
