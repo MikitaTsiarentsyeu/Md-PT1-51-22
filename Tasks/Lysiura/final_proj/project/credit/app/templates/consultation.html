@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block second_part %}
+{% endblock %}
+    
+{% block content %}
+    
+
+
+   
+   <p style=" margin-left: 500px;
+    padding-top: 10px;
+    font-size: 35px;
+    font-weight: 500;
+    color: #147614;;">Контакт-центр</p>
+   
+    <div class="cons">
+     <p style="color: black;font-weight:700;font-size:20px; margin-left:200px">Мы уделяем особое внимание качеству работы сотрудников контакт-центра. <br> Будьте уверены в их внимательности, вежливости, компетентности.<br> Экономьте свое время – решайте вопросы дистанционно.</p>
+     <div class="cons">
+      <div class="one_part_c" style="margin-left: 200px;" >
+        <img src="{% static "images/cont.jpg" %}" >
+      </div>
+        <div class="second_part_c" style="position: absolute; margin-top:-450px;margin-left: 800px;" > 
+          <div class=phone>
+            <a style="background-color: yellow; font-size:30px" href="tel:+375447001992">+375447001992</a>
+          </div>
+        </div>
+  
+  <div style="position: absolute; margin-top:-410px;margin-left: 800px;" class="info_c">
+  <p style="color: green;font-weight:700;font-size:20px; ">Звоните по указанному <br>номеру.</p>
+  <h2>Режим работы:</h2>
+  <p style="font-weight:500">пн.-пт.: 8.30 – 21.00* <br>
+    сб.-вс.: 9.00 – 17.00* <br>
+    *кроме праздничных дней</p>
+    <img src="{% static "images/cons_soc.png" %}" style="height: 200px; width:600px; margin-left:-280px"  >
+  </div>
+  </div>
+   </div>
+   <hr style="color: black;margin-top:40px">
+   <p style=" margin-left: 400px;
+   padding-top: 10px;
+   font-size: 35px;
+   font-weight: 500;
+   color: #147614;;">Вопрос консультанту</p>
+   
+   <div style="margin-left: 780px; position:absolute; margin-top:-50px" class="spinner-border text-success" role="status">
+    <span class="visually-hidden">Загрузка...</span>
+    </div>
+   <p id="txt" style=" margin-left: 360px;
+    margin-bottom: 30px;
+    margin-top: -8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #070707;" >Если вы хотите задать вопрос консультанту - <br>  воспользуйтесь данной формой.
+   <br> Вы получите ответ на свой вопрос в кратчайшие сроки. </p>
+   
+   <div class="zayava" id="zzz">
+   <div class="main_cred">
+    <div class="one_part">
+      <form method="POST" action = 'consultation_request' >
+        {% csrf_token %}
+      <p class="cred">Ваше имя:<span class="required"></span></p>
+      <input required type="text" id="name" name="name"  placeholder="Введите имя" pattern="^[а-яА-Я]+$"  required />
+      
+      <p class="cred">Электронная почта:<span class="required"></span></p>
+      <input required type="email" id="email" name="email" placeholder="Germanlis123@gmail.com"  pattern=".+@gmail.com"   required />
+    </div>
+    
+      <div class="second_part"> 
+       <p style=" font-size:20px; font-weight: 500; margin-top:10px">Ваш вопрос:</p>
+       <p><textarea rows="3" cols="40" name="your_ask" id="your_ask"></textarea></p>
+      </div>      
+  </div>
+  </div>
+
+  <p style = 'text-align:center;font-size:25px; color:red; font-weight: 500'>{{warning}}</p>
+  <input type="submit" style="margin-left: 550px" class="btn1" value="Отправить" >
+        </form>
+      
+{% endblock %}

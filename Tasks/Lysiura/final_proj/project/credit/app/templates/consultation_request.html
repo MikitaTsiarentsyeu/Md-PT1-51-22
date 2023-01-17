@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block second_part %}
+{% endblock %}
+    
+{% block content %}
+ 
+    {% if cons_req %}
+    <p class = 'cons_req_p'>{{ cons_req.name }}, благодарим вас за вопрос!<br><br> Ответ будет отправлен на вашу почту <br>  {{ cons_req.email }} в ближайшее время </p>
+    {% endif%}
+
+{% endblock %}
+
