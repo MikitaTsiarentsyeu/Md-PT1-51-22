@@ -1,0 +1,75 @@
+{% load static %}
+
+
+#header {
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #cccccc;
+    background: url('/static/handmade/img/header_pic.jpg');
+    background-size: cover;
+    display:flex;
+    justify-content: space-around;
+    align-items: center
+    min-height:10vh;
+}
+
+#footer {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #cccccc;
+    background: url('/static/handmade/img/footer_pic.jpg');
+    background-size: cover;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height:10vh;
+}
+
+#main {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(transparent 50%, rgba(214, 108, 0, 0.2) 50%),
+                linear-gradient(90deg, rgba(214, 108, 0, 0.2) 50%, transparent 50%);
+    background-size: 40px 40px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height:80vh;
+
+}
+
+#buttons {
+    display: flex;
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+
+
+a:link {
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #100000;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color: grey;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+

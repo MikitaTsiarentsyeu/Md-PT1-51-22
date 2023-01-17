@@ -1,0 +1,66 @@
+{% load static %}
+{% load additional_functions %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head style="font-family: Arial, Helvetica, sans-serif;">
+    <link rel="stylesheet" href="{% static 'handmade/css/hm_style.css' %}" type="text/css" />
+    {% block title %}
+    {% endblock %}
+</head>
+
+    <body >
+        <div style="min-height:100vh; display:flex; flex-direction:column;
+            justify-content:space-between;">
+            <div>
+                <div id="header" >
+                    <img src="{% static 'handmade/img/logo.jpg' %}" height="125" alt="Ooops, not loaded" />
+                    <div id="buttons">
+                        <div style="margin-top: 5px; margin-bottom: 5px">
+                            <a  href="{% url 'home' %}">Home page</a>
+                        </div>
+                        <div style="margin-top: 5px; margin-bottom: 5px">
+                            <a  href="{% url 'products' %}" style="margin: 10px">Show products</a>
+                            {% if perms.handmade.add_material %}
+                                <a  href="{% url 'materials' %}" style="margin: 10px">Show materials </a>
+                            {% endif %}
+                            {% if perms.handmade.add_accessory %}
+                                <a  href="{% url 'accessories' %}" style="margin: 10px">Show accessories</a>
+                            {% endif %}
+                        </div>
+                        <div style="margin-top: 5px; margin-bottom: 5px">
+                            {% if perms.handmade.add_product %}
+                                <a href="{% url 'add_product' %}" style="margin: 10px">Add product</a>
+                            {% endif %}
+                            {% if perms.handmade.add_material %}
+                                <a href="{% url 'add_material' %}" style="margin: 10px">Add material </a>
+                            {% endif %}
+                            {% if perms.handmade.add_accessory %}
+                                <a href="{% url 'add_accessory' %}" style="margin: 10px">Add accessory</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div>
+                        {% if user.is_authenticated %}
+                            <p><b>USD rate: {% bynusd %} BYN</b></p>
+                            <p>Glad to see you, {{ user.get_username }}!</p>
+                            <a href="{% url 'logout' %}?next={{request.path}}">Log out</a>
+                        {% else %}
+                            <a href="{% url 'login' %}?next={{request.path}}" style="font-size: 200%;">Log in</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div id="main" >
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div id="footer">
+                <p>This is a test Final Project for Python Course.</p>
+                <p>Here should be also contacts and disclaimer, but I will leave it as it is.</p>
+                <p>Aleksandr Liavonchyk</p>
+            </div>
+        </div>
+    </body>
+</html>
+

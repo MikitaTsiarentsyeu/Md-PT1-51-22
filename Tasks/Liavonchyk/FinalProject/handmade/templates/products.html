@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <title>Products</title>
+{% endblock %}
+
+{% block content %}
+    <h2>Products created:</h2>
+    <ul style="list-style-type:decimal; ">
+        {% for product in products %}
+            <li style="font-size: 18px; vertical-align: center; margin: 5;padding: 5px;">
+                <a href="{% url 'product' product.id %}" >
+                    {{ product.name|capfirst }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

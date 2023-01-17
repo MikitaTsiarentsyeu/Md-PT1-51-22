@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <title>{{ product.name|capfirst }}</title>
+{% endblock %}
+
+{% block content %}
+<div style="display: flex; flex-direction: column; justify-content:flex-start; align-items:center; width:500px;">
+    <h2> {{ product.name|capfirst }} </h2>
+    <p style="text-align:center"> Materials used: {{product.used_materials|capfirst }} </p>
+    <p> Price BYN: {{ product.price_BYN }}</p>
+    <p> Price USD: {{ product.price_USD }}</p>
+    <p> Materials costs BYN: {{ product.materials_price_BYN }}</p>
+    <p> Materials costs USD: {{ product.materials_price_USD }}</p>
+    <p> Client: {{ product.to_whom_was_given|capfirst }}</p>
+    <p> Sell date: {{ product.sell_date }}</p>
+    <p>Image: </p>
+    {% if product.photo %}
+        <img width="100%" src="{{ product.photo.url }}">
+    {% endif %}
+    <p style="text-align:center"> Comment: {{ product.comment|capfirst }}</p>
+</div>
+{% endblock %}

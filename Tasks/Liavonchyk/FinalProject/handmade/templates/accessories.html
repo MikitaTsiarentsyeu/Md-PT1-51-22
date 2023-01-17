@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <title>Accessories</title>
+{% endblock %}
+
+{% block content %}
+    <h2>Accessories that have been bought:</h2>
+    <ul style="list-style-type:decimal">
+        {% for accessory in accessories %}
+            <li style="font-size: 18px; vertical-align: center; margin: 5;padding: 5px;">
+                <a href="{% url 'accessory' accessory.id %} " >
+                    {{ accessory.type|capfirst }}: {{ accessory.description|capfirst }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

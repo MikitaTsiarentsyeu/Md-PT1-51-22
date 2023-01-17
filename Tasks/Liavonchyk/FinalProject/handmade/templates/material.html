@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <title> {{ material.type|capfirst }} {{ material.trade_mark|capfirst }} {{ material.article }}</title>
+{% endblock %}
+
+{% block content %}
+<div style="display: flex; flex-direction: column; justify-content: flex-start;align-items:center; width:500px;">
+    <h2> {{ material.type|capfirst }} {{ material.trade_mark|capfirst }} {{ material.series|capfirst }} {{ material.color }}</h2>
+    <p> Type: {{ material.type|capfirst }}</p>
+    <p> Article if applicable: {{ material.article }} </p>
+    <p> Manufacturer: {{ material.manufacturer|capfirst }} </p>
+    <p> Trade mark: {{ material.trade_mark|capfirst }} </p>
+    <p> Color: {{ material.color }} </p>
+    <p> Effects: {{ material.effects }} </p>
+    <p> Nominal amount: {{ material.nominal_amount }} {{ material.measure_units }}</p>
+    <p> Real amount: {{ material.real_amount }} {{ material.measure_units }}</p>
+    <p> Price BYN: {{ material.unit_price_BYN }}</p>
+    <p> Price USD: {{ material.unit_price_USD }}</p>
+    <p> Purchase date: {{ material.purchase_date }}</p>
+    <p> Purchase place: {{ material.purchase_place }}</p>
+    <p style="text-align:center"> Comment: {{ material.comment|capfirst }}</p>
+    <p> Update timestamp: {{ material.update_timestamp }}</p>
+</div>
+{% endblock %}
